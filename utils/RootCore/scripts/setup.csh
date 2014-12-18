@@ -5,13 +5,13 @@ else
     test $? -ne 0 && echo no valid root version found, please set up root && return 1
 endif
 
-test "x$ROOTSYS" != "x/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.05-x86_64-slc5-gcc4.3" && echo ROOTSYS=$ROOTSYS not /cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.05-x86_64-slc5-gcc4.3 && echo please set up correct root version or follow the instructions at && echo \ \ https://twiki.cern.ch/twiki/bin/viewauth/Atlas/RootCore#If_Something_Goes_Wrong && return 1
+test "x$ROOTSYS" != "x/Users/Alex/Desktop/HEP/ROOT6" && echo ROOTSYS=$ROOTSYS not /Users/Alex/Desktop/HEP/ROOT6 && echo please set up correct root version or follow the instructions at && echo \ \ https://twiki.cern.ch/twiki/bin/viewauth/Atlas/RootCore#If_Something_Goes_Wrong && return 1
 
-setenv ROOTCOREDIR /sx/caj24/testarea/ProofAna/utils/RootCore
+setenv ROOTCOREDIR /Users/Alex/Desktop/ProofAna/utils/RootCore
 if $?ROOTCOREBIN then
     true
 else
-    setenv ROOTCOREBIN /sx/caj24/testarea/ProofAna/utils/RootCore
+    setenv ROOTCOREBIN /Users/Alex/Desktop/ProofAna/utils/RootCore
 endif
 test \! -d "$ROOTCOREBIN" && echo output directory not found, please create it && echo "  mkdir $ROOTCOREBIN" && return 1
 
