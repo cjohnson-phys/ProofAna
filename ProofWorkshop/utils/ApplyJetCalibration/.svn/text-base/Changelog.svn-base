@@ -1,0 +1,192 @@
+fApplyJetCalibration-00-00-01
+	First version. Contains default Rel 16.6 and Rel 17 jet calibrations,
+	and the first set of pile-up corrections
+
+ApplyJetCalibration-00-00-02
+	Improved documentation, and options to switch betwen MeV, GeV.
+	MeV still the default (ATLAS default - sigh...). UseGeV() expects GeV
+	as input and returns all corrections in GeV.
+
+ApplyJetCalibration-00-00-03
+	Added Makefile.Standalone
+
+ApplyJetCalibration-00-00-04
+	Now compatible with root 5.32. Added details on how each calibration
+	was derived in doc folder.
+
+ApplyJetCalibration-00-00-05
+	Do not use (missing a file)
+
+ApplyJetCalibration-00-00-06
+	Added fist version of in-situ eta intercalibration. Not applied by default.
+	The eta-intercalibration is to be used by the other in-situ analyses to
+	derive the absolute scale for data.
+
+ApplyJetCalibration-00-00-07
+	Added updated version of in-situ eta intercalibration. Not applied by default.
+	The eta-intercalibration is to be used by the other in-situ analyses to
+	derive the absolute scale for data.
+
+ApplyJetCalibration-00-00-08
+	Changed structure of calibration settings files such that they should be
+	automatically found using RootCore
+
+ApplyJetCalibration-00-00-09, Feb 9, 2012
+	Third "final" iteration of eta intercalibration correction.
+	Default version used by other in-situ analyses
+
+ApplyJetCalibration-00-00-10
+	Added AFII calibration
+
+ApplyJetCalibration-00-00-11
+	New option to apply bad channel correction
+
+ApplyJetCalibration-00-00-12
+	Dusted off the changelog
+	Added first MC12 calibrations, offsets from mswiatlo, csandova
+	Several updates to in-situ corrections to data in the meantime
+
+ApplyJetCalibration-00-00-13
+	Preliminary 2011 in-situ calbiration
+	First version with both absolute (Z+jet, MPF andmultijet) and relative (eta) in-situ calibration
+
+ApplyJetCalibration-00-01-00, March 29, 2012
+	Same as 00-00-13, only small update in the plotting macro.
+
+ApplyJetCalibration-00-01-01, April 12, 2012
+	Fixed bug in in-situ applying inverse of in-situ calibration 
+
+ApplyJetCalibration-00-01-02, April 20, 2012
+	Smoothing applied to calibration in tag -01-01 
+
+ApplyJetCalibration-00-01-03, April 26, 2012
+	New iteration of in-situ calibration, only up to 600 GeV (no MJB, frozen beyond 600 GeV)
+
+ApplyJetCalibration-00-01-03-01, Mar 3, 2012
+        Fixed missing root file
+
+ApplyJetCalibration-00-01-04, May 10, 2012
+        New iteration of in-situ calibration, full pT range (including MJB)
+        Fixed memory leaks for settings and axes (thanks K-J. Grahn)
+
+ApplyJetCalibration-00-01-05, May 10, 2012
+        Fixed missing file for new iteration of in-situ calibration, full pT range (including MJB)
+        Using smoothing Smooth3 (less hard)
+
+ApplyJetCalibration-00-01-06, May 15, 2012
+        Preliminary calibration with new iteration of in-situ calibration, full pT range (including MJB)
+
+ApplyJetCalibration-00-01-07, May 15, 2012
+        Preliminary calibration for muScan2 samples, all jet collections, all conditions except thresh = 60
+        Using smoothing Smooth1 (harder)
+
+ApplyJetCalibration-00-02-05, August 17, 2012
+        Introducing R=0.5, 0.7 calibrations in JES_June2012.config. This file also contains updated
+        R=0.4,0.6 calibrations as of 00-02-04. Calibrations from mswiatlo, offsets from csandova
+        Added ApplyOffset function
+
+ApplyJetCalibration-00-02-06
+         Added August2012 updated calibration for 2012 data/MC
+         Added AFII calibrations for 2012 data/MC
+
+ApplyJetCalibration-00-02-07, September 14th, 2012
+         implemented support for jet mass correction
+         added JES, eta and mass corrections for 4 fat jet collections - for 2011 data/MC
+
+ApplyJetCalibration-00-01-08
+         added JES, eta and mass corrections for 2 ungroomed fat jet collections - for 2011 data/MC
+
+ApplyJetCalibration-00-02-08, Oct 15 2012
+	First implementation of jet area offset correction with residual correction
+	TEST VERSION
+
+ApplyJetCalibration-00-02-09, Oct 16 2012
+	Second implementation of jet Area offset correction - now completly decoupled
+	from previous pile-up correction
+
+ApplyJetCalibration-00-02-10, Oct 18 2012
+	jtaenzer - Minor bug fix in jet Area offset  correction - it now passes the jet pT correctly
+	jtaenzer - Fixed some warnings coming from the JetCalibrationTool constructor
+	jtaenzer - Added athena version.cmt
+
+ApplyJetCalibration-00-02-11, Oct 18 2012
+	mswiatlo- corrected August2102 calibration function for one bin in AntiKt6LCTopo jets (eta 3.2-3.3)
+	dgillber - Changed jet area correction to use transverse component of area 4-vector instead of full
+	  4-vector correction
+	dgillber - Updated residual jet area offset correction factors for LC jets, and added new ones for EM jets (from John)
+
+ApplyJetCalibration-00-02-12, Oct 19 2012
+        jtaenzer - Added config flag (ApplyFullJetArea4MomentumCorrection) that allows users to apply full 4-vector area correction. It is off by default.
+
+ApplyJetCalibration-00-02-13, November 02 2012
+	jtaenzer - Added November2012 config file, new offset and residual offset correction factors from John.
+	jtaenzer - Changes in the offset and residual offset correction factors (copy pasted from John):
+	           --more inclusive event selection (no longer requiring a certain number of truth jets within the tracking acceptance)
+	           --truth isolation cut (all jets are required to be truth matched within the full radius of the jet, but no other truth jets should exist within 2.5 times the radius)
+		   --mu has been rescaled (multiplied by 1.11)
+	           --NPV has been adjusted to account for the fact that the beamspot in MC is too wide in z
+	jtaenzer - Updated the code so it supports the new format of the offset correction factors (it's still backwards compatible).
+	jtaenzer - Fixed minor memory leak in JetCalibrationTool::init()
+
+
+ApplyJetCalibration-00-02-14, November 13 2012
+	jtaenzer/dgillber - Added new method, JetCalibrationTool::ApplyJetAreaOffset, which applies only the jet area and residual offset corrections.
+	jtaenzer/dgillber - Added another new method, JetCalibrationTool::ApplyJetAreaOffsetOrigin, which applies only the jet area and res. offset corrections using origin corrected quantities.
+
+ApplyJetCalibration-00-02-15, November 19 2012
+        jtaenzer - Added new GSCTool class which returns the global sequential calibration jet correction factor
+        jtaenzer - Added new functions to the JetCalibrationTool which hook in to GSCTool and apply the global sequential correction
+        jtaenzer - Added new draw macro/script which plots the individual global sequential jet correction factors
+
+ApplyJetCalibration-00-02-17, November 2X 2012
+	Max: First JES for jet area corrected jets
+
+ApplyJetCalibration-00-02-17, November 30 2012
+	jtaenzer - Added support for mu-scaling and NPV correction inside the tool
+	Dag - Tool now aborts if the user attempts to call inconsistent offset corrections
+	Dag - NPV correction now extrapolates to higher NPV values
+	Dag - new method to return integer NPV corrected values (randomly selected)
+
+ApplyJetCalibration-00-02-18, Dec 7 2012
+	Dag - Added Jim's dijet eta intercalibration results with dedicated config
+	          Only proper calibration for R=0.4 EM+JES, same applied for 0.4 LC. None for 0.6 jets.
+	          Stage 1 of the Moriond 2013 JES - to be used by JES analyses only
+
+ApplyJetCalibration-00-02-19, Dec 11 2012
+	Dag - Added update results from Jim's dijet eta intercalibration with new, dedicated config
+		  Contains calibration for all 4 jet algos
+	          Stage 1 of the Moriond 2013 JES - to be used by JES analyses only
+
+ApplyJetCalibration-00-02-20, Dec 13 2012
+	mswiatlowski - still owes jtaenzer a beer
+	mswiatlowski - Added new 2012 fat jet calibration constants
+
+ApplyJetCalibration-00-02-21, Dec 15 2012
+	jtaenzer - Added ApplyJetAreaOffsetEtaJESGSC method for applying GSC after the new pile up corrections
+	jtaenzer - Added GSC_November2012.config which should be used with the new ApplyJetAreaOFfsetEtaJESGSC method
+	jtaenzer - Added include for the NPVBeamspotCorrection to DrawGSC and implemented support for drawing multiple 
+		   GSC corrections to gscdraw.sh (anticipating future need)
+
+ApplyJetCalibration-00-03-00, Dec 21 2012
+	Dag & Caterina - Added first full insitu correction for 2012: InsituJES_2012_FirstCalibration.config
+	Dag - introduced configurable minPt EtaJES exptrapolation point and set it to 15 GeV for R=0.6 jets with the new calbiration
+	Dag - added several mu and NPV correction methods that can be used by the user to compare data and MC.
+
+ApplyJetCalibration-00-03-01, Jan 17 2013
+        jtaenzer - Added first AFII JES correction for 2012: InsituJES_2012_FirstCalibration_AFII.config (doesn't include AntiKt6LCTopo yet)
+	jtaenzer - Small fix to DrawJES.C to account for missing AntiKt6LCTopo correction factors
+
+ApplyJetCalibration-00-03-02, Jan 20 2013
+        jtaenzer - Changed the names of the two 2012 JES correction configs and added soft links to the old names:
+	               InsituJES_2012_FirstCalibration.config -> JES_Full2012dataset_Preliminary_Jan13.config
+	               InsituJES_2012_FirstCalibration_AFII.config -> JES_Full2012dataset_Preliminary_AFII_Jan13.config
+
+ApplyJetCalibration-00-03-03, Feb 6 2013
+        jtaenzer - Fixed potential memory leaks in JetCalibrationTool, GSCTool, NPVBeamspotCorrectionTool classes
+	jtaenzer - Improved protection to prevent a TH2D::Interpolate error when the eta or pT value of a jet was exactly at a bin edge
+	jtaenzer - Removed StandAlone folder for svn switch compatibility, it is now created by the makefile
+	jtaenzer - Added classdefs for GSCTool, NPVBeamspotCorrectionTool
+	jtaenzer - error method now prints to both error file and log file before aborting
+	jtaenzer - Added GSC_January2013_AFII.config for applying the August2012 GSC after the January2013 AFII calibration
+	jtaenzer - DrawJES.C now ignores GSC configs
+

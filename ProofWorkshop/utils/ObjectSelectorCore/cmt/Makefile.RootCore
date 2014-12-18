@@ -1,0 +1,8 @@
+# Author: Karsten Koeneke (karsten.koeneke@cernSPAMNOT.ch)
+# ObjectSelectorCore root stand-alone makefile
+
+PACKAGE          = ObjectSelectorCore
+PACKAGE_CXXFLAGS = 
+PACKAGE_LDFLAGS  =
+
+include $(ROOTCOREDIR)/Makefile-common

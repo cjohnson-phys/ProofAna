@@ -1,0 +1,6 @@
+PACKAGE          = ApplyJetCalibration
+PACKAGE_CXXFLAGS = -DAPPLYJETCALIB_STANDALONE
+PACKAGE_LDFLAGS  = 
+PACKAGE_DEP      = 
+
+include $(ROOTCOREDIR)/Makefile-common

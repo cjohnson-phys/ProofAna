@@ -1,0 +1,49 @@
+10
+
+dir
+373861
+svn+ssh://svn.cern.ch/reps/atlasinst/Institutes/SLAC/ProofAnaPackages/ProofWorkshop/trunk
+svn+ssh://svn.cern.ch/reps/atlasinst
+
+
+
+2014-12-17T21:53:51.650054Z
+373859
+mswiatlo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28d52da6-859c-4cdc-abcc-1ec3d2c02001
+
+analyses
+dir
+
+utils
+dir
+
+run
+dir
+
+config
+dir
+
+scripts
+dir
+
+eventbuilders
+dir
+
+filelists
+dir
+

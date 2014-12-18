@@ -1,0 +1,210 @@
+#
+# author: Nils Krumnack, with input from Attila Krasznahorkay and Max Baak
+#
+
+# For documentation check:
+# https://twiki.cern.ch/twiki/bin/viewauth/Atlas/GoodRunsLists
+
+
+
+#
+# root setup code
+#
+
+CURDIR := $(shell pwd | xargs dirname)/StandAlone
+
+include /cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.05-x86_64-slc5-gcc4.3/etc/Makefile.arch
+
+
+
+#
+# generic configuration options
+#
+
+DEPLIST := $(shell $(ROOTCOREDIR)/scripts/get_dependency.sh $(PACKAGE_DEP))
+
+PRGDIR = ../util
+SRCDIR = ../Root
+TSTDIR = ../test
+OBJDIR = ../obj
+LIBDIR = ../StandAlone
+BINDIR = ../bin
+BINTESTDIR  = ../test-bin
+
+ifneq ($(ROOTCOREOBJ),)
+OBJDIR = $(ROOTCOREOBJ)/$(PACKAGE)/obj
+LIBDIR = $(ROOTCOREOBJ)/$(PACKAGE)/StandAlone
+BINDIR = $(ROOTCOREOBJ)/$(PACKAGE)/bin
+BINTESTDIR  = $(ROOTCOREOBJ)/$(PACKAGE)/test-bin
+endif
+
+ifneq ($(PACKAGE_REFLEX),1)
+LINK_DEF  = $(SRCDIR)/LinkDef.h
+else
+LINK_DEF  = ../$(PACKAGE)/$(PACKAGE)Dict.h
+endif
+
+DICT_BASE = $(OBJDIR)/$(PACKAGE)_Dict
+DICT_CINT = $(DICT_BASE).cxx
+
+SRCFILES = $(wildcard $(SRCDIR)/*.cxx)
+PRGFILES = $(wildcard $(PRGDIR)/*.cxx)
+TSTFILES = $(wildcard $(TSTDIR)/*.cxx)
+OBJFILES = $(patsubst %.cxx,%.o,$(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SRCFILES))) $(shell test -f $(LINK_DEF) && echo $(DICT_BASE).o)
+DEPFILES = $(patsubst %.cxx,%.d,$(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SRCFILES))) $(patsubst $(PRGDIR)/%.cxx,$(OBJDIR)/%.d,$(PRGFILES)) $(patsubst $(TSTDIR)/%.cxx,$(OBJDIR)/%.d,$(TSTFILES)) $(shell test -f $(LINK_DEF) && echo $(OBJDIR)/LinkDef.d)
+LIBFILE  = $(LIBDIR)/lib$(PACKAGE).so
+STATFILE = $(LIBDIR)/lib$(PACKAGE).a
+BINFILES = $(patsubst $(PRGDIR)/%.cxx,$(BINDIR)/%,$(PRGFILES)) $(patsubst $(TSTDIR)/%.cxx,$(BINTESTDIR)/%,$(TSTFILES))
+
+
+
+CXXFLAGS   += -I.. -I../Root -I$(ROOTCOREBIN)/include $(PACKAGE_CXXFLAGS) $(shell $(ROOTCOREDIR)/scripts/get_cxxflags.sh $(PACKAGE)) -DROOTCORE $(shell root-config --cflags)  -D__USE_XOPEN2K8
+MFLAGS      = -MM
+SOFLAGS    += $(PACKAGE_LDFLAGS) $(shell root-config --ldflags) 
+
+ifeq ($(PLATFORM),macosx)
+SOFLAGS    += -dynamiclib -undefined dynamic_lookup -install_name @rpath/lib$(PACKAGE).so
+endif
+
+ifneq ($(BOOSTINCDIR),)
+CXXFLAGS   += -I$(BOOSTINCDIR)
+endif
+
+ifeq ($(PACKAGE_NOOPT),1)
+OPT  =
+OPT2 =
+endif
+
+SILENT=@
+ifeq ($(ROOTCORE_VERBOSE),1)
+SILENT=
+endif
+
+ifeq (1,2)
+PACKAGE_PEDANTIC=1
+endif
+
+ifneq (1,0)
+ifeq ($(PACKAGE_PEDANTIC),1)
+CXXFLAGS   += -ansi -pipe -W -Wall  -Wno-deprecated -pedantic -Wwrite-strings -Wpointer-arith -Woverloaded-virtual -Wno-long-long
+endif
+endif
+
+#
+# generic rules
+#
+
+ifneq ($(PACKAGE_NOCC),1)
+default: $(DEPFILES) shlib $(BINFILES)
+else
+default:
+endif
+
+shlib: $(LIBFILE) $(STATFILE)
+
+clean:
+	$(SILENT)rm -rf $(BINDIR) $(BINTESTDIR) $(OBJDIR) $(LIBDIR)
+	$(SILENT)cd .. && rm -rf $(PACKAGE_CLEAN)
+
+RC_DEP = \
+  $(SILENT)echo "Making dependency for $<" ; \
+  set -e; rm -f $@; mkdir -p $(OBJDIR) ; \
+  $(CXX) $(CXXFLAGS) $(INCLUDES) $(MFLAGS) $< > $@.$$$$; \
+  sed 's,\($*\)\.o[ :]*,$(OBJDIR)/\1.o $@ : ,g' < $@.$$$$ > $@; \
+  rm -f $@.$$$$
+
+COMPILE1 := $(CXX) $(CXXFLAGS) $(INCLUDES)
+RC_OBJ1 = \
+  $(SILENT)echo "Compiling $<" ; \
+  mkdir -p $(OBJDIR) ; \
+  $(COMPILE1) -c $< -o $@
+
+ifeq ($(PACKAGE_NOOPT),dict)
+OPT  =
+OPT2 =
+endif
+
+COMPILE2 := $(CXX) $(CXXFLAGS) $(INCLUDES)
+RC_OBJ2 = \
+  $(SILENT)echo "Compiling $<" ; \
+  mkdir -p $(OBJDIR) ; \
+  $(COMPILE2) -c $< -o $@
+
+$(OBJDIR)/%.o : $(SRCDIR)/%.cxx
+	$(RC_OBJ1)
+
+$(OBJDIR)/%.d : $(SRCDIR)/%.cxx
+	$(RC_DEP)
+
+$(OBJDIR)/%.o : $(PRGDIR)/%.cxx
+	$(RC_OBJ1)
+
+$(OBJDIR)/%.d : $(PRGDIR)/%.cxx
+	$(RC_DEP)
+
+$(OBJDIR)/%.o : $(TSTDIR)/%.cxx
+	$(RC_OBJ1)
+
+$(OBJDIR)/%.d : $(TSTDIR)/%.cxx
+	$(RC_DEP)
+
+$(OBJDIR)/%.o : $(OBJDIR)/%.cxx
+	$(RC_OBJ2)
+
+$(OBJDIR)/%.d : $(OBJDIR)/%.cxx
+	$(RC_DEP)
+
+DICTFLAGS = $(shell for flag in $(CXXFLAGS) ; do echo $$flag | grep -E -e '^-[ID]' ; done)
+
+ifneq ($(PACKAGE_REFLEX),1)
+$(DICT_CINT) : $(LINK_DEF)
+	$(SILENT)echo "Running rootcint"
+	$(SILENT)mkdir -p $(OBJDIR)
+	$(SILENT)$(ROOTSYS)/bin/rootcint -f $(DICT_CINT) -c -p  $(DICTFLAGS) $(LINK_DEF)
+	$(SILENT)cat $(ROOTCOREDIR)/DictPreamble.cxx >$(DICT_CINT)-tmp
+	$(SILENT)grep include $(LINK_DEF) >>$(DICT_CINT)-tmp || true
+	$(SILENT)cat $(DICT_CINT) >>$(DICT_CINT)-tmp
+	$(SILENT)mv $(DICT_CINT)-tmp $(DICT_CINT)
+
+$(OBJDIR)/LinkDef.d : $(LINK_DEF)
+	$(SILENT)echo "Making dependency for $<" ; \
+	set -e; rm -f $@; mkdir -p $(OBJDIR) ; \
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(MFLAGS) $< > $@.$$$$; \
+	sed 's,LinkDef\.o[ :]*,$(OBJDIR)/LinkDef.d $(DICT_BASE).cxx : ,g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$
+else
+$(DICT_CINT) : $(LINK_DEF)
+	$(SILENT)echo "Running Reflex"
+	$(SILENT)mkdir -p $(OBJDIR)
+	$(SILENT)$(shell root-config --exec-prefix)/bin/genreflex $(LINK_DEF) -s ../$(PACKAGE)/selection.xml -o $(DICT_CINT) $(DICTFLAGS)
+
+$(OBJDIR)/LinkDef.d : $(LINK_DEF)
+	$(SILENT)echo "Making dependency for $<" ; \
+	set -e; rm -f $@; mkdir -p $(OBJDIR) ; \
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(MFLAGS) $< > $@.$$$$; \
+	sed 's,LinkDef\.o[ :]*,$(OBJDIR)/LinkDef.d $(DICT_BASE).cxx : ../$(PACKAGE)/selection.xml ,g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$
+endif
+
+
+$(LIBFILE): $(OBJFILES)
+	$(SILENT)echo "Linking $@"
+	$(SILENT)mkdir -p $(LIBDIR)
+	$(SILENT)$(LD) $(SOFLAGS) $^ -o $@
+
+$(STATFILE): $(OBJFILES)
+	$(SILENT)echo "Linking $@"
+	$(SILENT)mkdir -p $(LIBDIR)
+	$(SILENT)ar rcs $@ $^
+
+$(BINDIR)/%:  $(OBJDIR)/%.o $(LIBFILE)
+	$(SILENT)echo "Linking $@"
+	$(SILENT)mkdir -p $(BINDIR)
+	$(SILENT)$(LD) -o $@ $< -L$(LIBDIR) $(LDFLAGS)  $(shell $(ROOTCOREDIR)/scripts/get_ldflags.sh $(PACKAGE))  $(ROOTLIBS)
+
+$(BINTESTDIR)/%:  $(OBJDIR)/%.o $(LIBFILE)
+	$(SILENT)echo "Linking $@"
+	$(SILENT)mkdir -p $(BINTESTDIR)
+	$(SILENT)$(LD) -o $@ $< -L$(LIBDIR) $(LDFLAGS)  $(shell $(ROOTCOREDIR)/scripts/get_ldflags.sh $(PACKAGE))  $(ROOTLIBS)
+
+-include $(DEPFILES)

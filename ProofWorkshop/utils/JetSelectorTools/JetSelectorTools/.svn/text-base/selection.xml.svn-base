@@ -1,0 +1,5 @@
+<lcgdict>
+    <class name="Root::TJetCleaningTool" />
+    <class name="ARAJetCleaningTool" />
+    <class name="AthJetCleaningTool" />
+</lcgdict>

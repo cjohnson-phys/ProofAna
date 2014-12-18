@@ -1,0 +1,256 @@
+# This file contains all the branches that are needed to run the METUtility Example macro
+# These are just a bare-bones selection that should be sufficient to regenerate the MET_RefFinal
+# They should also contain enough information to recompute systematics.
+# Lines starting with a hash are ignored.
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+# # # # #      Branches with object information for rebuilding the MET
+#
+# electron branches
+#
+el_n
+el_pt
+el_eta
+el_phi
+el_E
+el_MET_wet
+el_MET_wpx
+el_MET_wpy
+el_MET_statusWord
+# electron quality
+el_mediumPP
+el_charge
+el_author
+el_Etcone40
+# electron cluster branches
+el_cl_pt
+el_cl_eta
+el_cl_phi
+el_cl_E
+#
+# photon branches
+#
+ph_n
+ph_pt
+ph_eta
+ph_phi
+ph_E
+ph_MET_wet
+ph_MET_wpx
+ph_MET_wpy
+ph_MET_statusWord
+ph_isConv
+# photon cluster branches
+ph_cl_pt
+ph_cl_eta
+ph_cl_phi
+ph_cl_E
+#
+# tau branches -- tau rebuilding is unsafe, but left in for example of TESUncertaintyProvider
+#
+tau_n
+tau_pt
+tau_eta
+tau_phi
+#tau_E
+tau_MET_wet
+tau_MET_wpx
+tau_MET_wpy
+tau_MET_statusWord
+tau_nProng
+# tau quality
+tau_JetBDTSigMedium
+#
+# jet branches
+#
+jet_AntiKt4LCTopo_n
+jet_AntiKt4LCTopo_pt
+jet_AntiKt4LCTopo_eta
+jet_AntiKt4LCTopo_phi
+jet_AntiKt4LCTopo_emscale_pt
+jet_AntiKt4LCTopo_constscale_E
+jet_AntiKt4LCTopo_constscale_phi
+jet_AntiKt4LCTopo_constscale_eta
+jet_AntiKt4LCTopo_constscale_m
+jet_AntiKt4LCTopo_E
+jet_AntiKt4LCTopo_ActiveAreaPx
+jet_AntiKt4LCTopo_ActiveAreaPy
+jet_AntiKt4LCTopo_ActiveAreaPz
+jet_AntiKt4LCTopo_ActiveAreaE
+jet_AntiKt4LCTopo_MET_wet
+jet_AntiKt4LCTopo_MET_wpx
+jet_AntiKt4LCTopo_MET_wpy
+jet_AntiKt4LCTopo_MET_statusWord
+# jet quality
+jet_AntiKt4LCTopo_isBadLooseMinus
+jet_AntiKt4LCTopo_flavor_truth_label
+#
+# muon branches -- staco can be replaced by muid
+#
+mu_staco_n
+mu_staco_pt
+mu_staco_eta
+mu_staco_phi
+# mu_staco_E -- not needed, because we set up the muon assuming it has the right mass
+mu_staco_MET_wet
+mu_staco_MET_wpx
+mu_staco_MET_wpy
+mu_staco_MET_statusWord
+mu_staco_isCombinedMuon
+mu_staco_isStandAloneMuon
+mu_staco_isSegmentTaggedMuon
+# muon quality
+mu_staco_ptcone20
+mu_staco_nTRTHits
+mu_staco_nTRTOutliers
+mu_staco_expectBLayerHit
+mu_staco_nBLHits
+mu_staco_nPixHits
+mu_staco_nPixelDeadSensors
+mu_staco_nSCTHits
+mu_staco_nSCTDeadSensors
+mu_staco_nPixHoles
+mu_staco_nSCTHoles
+mu_staco_z0_exPV
+# additional muon branches that are used to compute and set the muon spectrometer 4-momentum
+# relevant when stand-alone muons are used
+mu_staco_ms_qoverp
+mu_staco_ms_theta
+mu_staco_ms_phi
+mu_staco_id_qoverp_exPV
+mu_staco_id_theta_exPV
+mu_staco_id_phi_exPV
+mu_staco_charge
+#
+# cluster branches -- left out for now, because most D3PDs don't contain them
+# also, it is recommended to use the pre-computed CellOut term, these are more for studies
+#
+# cl_n
+# cl_pt
+# cl_eta
+# cl_phi
+# cl_E
+# cl_MET_wet
+# cl_MET_wpx
+# cl_MET_wpy
+# cl_MET_statusWord
+#
+# track branches -- left out for now, because most D3PDs don't contain them
+# also, it is recommended to use the pre-computed CellOut term, these are more for studies
+#
+# trk_n
+# trk_pt
+# trk_eta
+# trk_phi
+# trk_E
+# trk_MET_wet
+# trk_MET_wpx
+# trk_MET_wpy
+# trk_MET_statusWord
+#
+# vertex branches -- for SoftTerms_ptHard
+#
+vxp_n
+vxp_z
+vxp_type
+vxp_nTracks
+#
+# Misc event info
+#
+RunNumber
+EventNumber
+mc_channel_number
+averageIntPerXing
+larError
+Eventshape_rhoKt4LC
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+# # # # #      Branches with the original MET quantities
+#
+# MET_RefFinal
+#
+MET_RefFinal_et
+MET_RefFinal_phi
+#
+MET_RefEle_et
+MET_RefEle_phi
+#
+MET_RefGamma_et
+MET_RefGamma_phi
+#
+MET_RefJet_et
+MET_RefJet_phi
+#
+MET_RefTau_et
+MET_RefTau_phi
+#
+MET_RefMuon_et
+MET_RefMuon_phi
+#
+MET_MuonBoy_et
+MET_MuonBoy_phi
+#
+MET_SoftJets_et
+MET_SoftJets_phi
+#
+MET_CellOut_Eflow_et
+MET_CellOut_Eflow_phi
+#
+MET_Truth_NonInt_et
+MET_Truth_NonInt_phi
+#
+MET_RefFinal_etx
+MET_RefFinal_ety
+MET_RefFinal_sumet
+#
+MET_RefEle_etx
+MET_RefEle_ety
+MET_RefEle_sumet
+#
+MET_RefGamma_etx
+MET_RefGamma_ety
+MET_RefGamma_sumet
+#
+MET_RefJet_etx
+MET_RefJet_ety
+MET_RefJet_sumet
+#
+MET_RefTau_etx
+MET_RefTau_ety
+MET_RefTau_sumet
+#
+MET_RefMuon_etx
+MET_RefMuon_ety
+MET_RefMuon_sumet
+#
+MET_MuonBoy_etx
+MET_MuonBoy_ety
+MET_MuonBoy_sumet
+#
+MET_SoftJets_etx
+MET_SoftJets_ety
+MET_SoftJets_sumet
+#
+MET_CellOut_Eflow_etx
+MET_CellOut_Eflow_ety
+MET_CellOut_Eflow_sumet
+#
+MET_Truth_NonInt_etx
+MET_Truth_NonInt_ety
+MET_Truth_NonInt_sumet
+#
+# MET_RefFinal_STVF
+#
+MET_RefFinal_STVF_etx
+MET_RefFinal_STVF_ety
+MET_RefFinal_STVF_sumet
+#
+MET_RefJet_JVFCut_etx
+MET_RefJet_JVFCut_ety
+MET_RefJet_JVFCut_sumet
+#
+MET_CellOut_Eflow_STVF_etx
+MET_CellOut_Eflow_STVF_ety
+MET_CellOut_Eflow_STVF_sumet

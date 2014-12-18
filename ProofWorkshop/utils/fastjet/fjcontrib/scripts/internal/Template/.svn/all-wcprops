@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/198/contrib/trunk/scripts/internal/Template
+END
+Template.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/28/contrib/trunk/scripts/internal/Template/Template.cc
+END
+example.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/33/contrib/trunk/scripts/internal/Template/example.cc
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/28/contrib/trunk/scripts/internal/Template/AUTHORS
+END
+VERSION
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/28/contrib/trunk/scripts/internal/Template/VERSION
+END
+example.ref
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/35/contrib/trunk/scripts/internal/Template/example.ref
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/28/contrib/trunk/scripts/internal/Template/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/41/contrib/trunk/scripts/internal/Template/COPYING
+END
+Template.hh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/28/contrib/trunk/scripts/internal/Template/Template.hh
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/47/contrib/trunk/scripts/internal/Template/NEWS
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/198/contrib/trunk/scripts/internal/Template/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/28/contrib/trunk/scripts/internal/Template/README
+END

@@ -1,0 +1,86 @@
+10
+
+dir
+373861
+svn+ssh://svn.cern.ch/reps/atlasinst/Institutes/SLAC/ProofAnaPackages/ProofWorkshop/trunk/utils/egammaAnalysisUtils
+svn+ssh://svn.cern.ch/reps/atlasinst
+
+
+
+2014-12-15T18:30:40.611337Z
+373748
+mswiatlo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28d52da6-859c-4cdc-abcc-1ec3d2c02001
+
+share
+dir
+
+Root
+dir
+
+cmt
+dir
+
+macros
+dir
+
+doc
+dir
+
+src
+dir
+
+ChangeLog
+file
+
+
+
+
+2014-12-17T16:48:35.027915Z
+da4c13bba49b3d6f629e02e3442632db
+2013-12-09T06:01:44.944609Z
+345861
+mswiatlo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+40752
+
+egammaAnalysisUtils
+dir
+
+util
+dir
+

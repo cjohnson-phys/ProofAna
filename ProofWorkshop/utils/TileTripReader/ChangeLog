@@ -1,0 +1,34 @@
+2013-03-27 Stephen Cole <Stephen.Cole@cern.ch>
+	* Tagging TileTripReader-00-00-06
+	* Added the ability to pass a NULL pointer in AthTileTripReader::accept() to only fill
+	  the "BadEvent" cut.
+
+2013-03-26 Stephen Cole <Stephen.Cole@cern.ch>
+	* Tagging TileTripReader-00-00-05
+	* Added AthTileTripReader::checkEvent() method
+	* In TTileTripReader.cxx changed try/catch check to std::map::find() check for speed
+	* Updated default file to CompleteTripList_2011-2012.root
+
+2013-03-04 Stephen Cole <Stephen.Cole@cern.ch>
+	* Tagging TileTripReader-00-00-04
+	* Added precompiler flag __STANDALONE__ to TTileTripReader
+	* Repaired Makefile.Standalone to use new flag
+	* Standalone version of TTileTripReader looses PATCore access
+	accept() and calculate() methods are disabled
+
+2013-02-26 Stephen Cole <Stephen.Cole@cern.ch>
+	* Tagging TileTripReader-00-00-03
+	* Improved comments in TTileTripReader.h
+	* Added complete trip file CompleteTripList_2011-2012.root
+
+2013-02-22 Stephen Cole <Stephen.Cole@cern.ch>
+	* Tagging TileTripReader-00-00-02
+	* Added checkEvent() method for ID'ing bad tile cal events
+	* Commented usage of buildOffsets() when RunMap.Run and TripList.Run values don't match
+	* Added "BadEvent" cut to returned TAccept for checkEvent()
+	* Added usage of new TTileTripReader methods to AthTileTripReader
+	* Changed verbosity setting to use Athena MSG::Level
+
+2012-09-18 Stephen Cole <Stephen.Cole@cern.ch>
+	* New package TileTripReader
+	* Tagging TileTripReader-00-00-01

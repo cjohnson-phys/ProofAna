@@ -1,0 +1,9 @@
+This directory contains two example programs for flavour clustering:
+----------------------------------------------------------------------
+
+  fastjet-example.cc     shows flavour clustering within FastJet
+
+  standalone-example.cc  shows flavour clustering with the "simple" C++
+                         interface to the f90 clustering code
+
+See the top of each file for instructions on running it.

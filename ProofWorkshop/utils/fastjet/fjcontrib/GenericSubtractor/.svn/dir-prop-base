@@ -1,0 +1,8 @@
+K 10
+svn:ignore
+V 55
+example
+libGenericSubtractor.a
+example_with_components
+
+END

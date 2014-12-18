@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/566/contrib/trunk/scripts/internal
+END
+common.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/268/contrib/trunk/scripts/internal/common.sh
+END
+generate-html-contents.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/566/contrib/trunk/scripts/internal/generate-html-contents.pl
+END
+package.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/149/contrib/trunk/scripts/internal/package.sh
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/241/contrib/trunk/scripts/internal/TODO
+END
+release-fjcontrib.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/292/contrib/trunk/scripts/internal/release-fjcontrib.sh
+END
+switch-to-version.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/361/contrib/trunk/scripts/internal/switch-to-version.sh
+END

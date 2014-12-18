@@ -1,0 +1,7 @@
+PACKAGE          = JetResolution
+PACKAGE_CXXFLAGS = -DJETRES_STANDALONE
+PACKAGE_LDFLAGS  = 
+PACKAGE_DEP      = 
+PACKAGE_PRELOAD  = Hist Tree Physics TreePlayer
+
+include $(ROOTCOREDIR)/Makefile-common

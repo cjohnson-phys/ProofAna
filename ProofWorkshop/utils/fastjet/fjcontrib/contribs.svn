@@ -1,0 +1,39 @@
+# This file contains the list of all contribs and their current 
+# (default) version. It is read by scripts/update-contribs.sh
+#
+# You should NOT MODIFY this file, but rather write your
+# local modifications in contribs.local, with the same format.
+# They will take precedence.
+#
+# The format is mostly two-column, where the location is a 
+# relative location pointing to a stable release (tags/...), 
+# the trunk (trunk) or a branch (branch/...) 
+# [branch is unsupported at the moment]
+#
+# A contribution can be skipped by replacing the location name
+# with at least a "-", e.g. "----"
+#
+# ContribName                    Location
+#-------------------------------------------
+# [contribs from the FastJet authors]
+GenericSubtractor                tags/1.2.0
+JetFFMoments                     tags/1.0.0
+# [contribs from Jesse Thaler]
+VariableR                        tags/1.1.1
+Nsubjettiness                    tags/2.1.0
+# [contrib from Andrew Larkoski, Gavin Salam & Jesse Thaler]
+EnergyCorrelator                 tags/1.1.0
+# [contrib from Jeff Tseng]
+ScJet                            tags/1.1.0
+# [contrib from S. El Hedri, A. Hook, M. Jankowiak, J.G. Wacker]
+SubjetCounting                   tags/1.0.1
+# [contrib from D. Krohn, M. Low, M.D. Schwartz, and L-T Wang]
+JetCleanser                      tags/1.0.1
+# [contrib from D. Bertolini, T. Chan and J. Thaler]
+JetsWithoutJets                  tags/1.0.0
+# [contrib from Peter Berta, Martin Spousta, David W. Miller and Rupert Leitner]
+ConstituentSubtractor            tags/1.0.0
+# [contrib from Gavin Salam, Gregory Soyez and Jesse Thaler]
+RecursiveTools                   tags/1.0.0
+# [contrib from Matteo Cacciari, Gavin Salam and Gregory Soyez]
+SoftKiller                       tags/1.0.0

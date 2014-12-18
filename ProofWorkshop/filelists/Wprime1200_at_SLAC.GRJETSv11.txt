@@ -1,0 +1,2 @@
+/atlas/dq2/group/perf-jets/GRJETS/group.perf-jets.GRJETS.v11.158689.Pythia8_AU2MSTW2008LO_Wprime_WZqqqq_m1200.merge.AOD.e1494_s1499_s1504_r3658_r3549.121119093901_StreamNTUP_GRJETS/group.perf-jets.160958_008062.StreamNTUP_GRJETS._00001.root
+/atlas/dq2/group/perf-jets/GRJETS/group.perf-jets.GRJETS.v11.158689.Pythia8_AU2MSTW2008LO_Wprime_WZqqqq_m1200.merge.AOD.e1494_s1499_s1504_r3658_r3549.121119093901_StreamNTUP_GRJETS/group.perf-jets.160958_008062.StreamNTUP_GRJETS._00002.root

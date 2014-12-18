@@ -1,0 +1,7 @@
+<lcgdict>
+    <class name="Root::TAccept" />
+    <class name="std::bitset<32>" />
+    <class name="Root::TSelectorToolBase" />
+    <class name="ARASelectorToolBase" />
+    <class name="AthSelectorToolBase" />
+</lcgdict>

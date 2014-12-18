@@ -1,0 +1,38 @@
+#
+#  Settings for Rel 17 Jet calibration
+#
+#  Config file author: Joe Taenzer, Nov 2, 2012
+#
+#####################
+
+# ----------------
+# 1. Absolute JES
+
+  # The file with the absolute JES factors
+AbsoluteJES.CalibFile:         CalibrationFactors/AbsoluteJES_Rel17.2_OffsetSubtracted_2.config
+AbsoluteJES.Description:       JES for release 17.2, derived August 2012, for application to Data12 and MC12
+
+# ----------------
+# 2. Pile-up correction
+
+  # What offset correction to apply
+OffsetCorrection.Name:        OffsetMC12anow
+
+  # These corrections should correspond to the
+  # conditions of the absolute JES calibration
+OffsetCorrection.DefaultMuRef:   0
+OffsetCorrection.DefaultNPVRef:  1
+
+  # additional config files to include
+Includes:             CalibrationFactors/MCBasedOffset_2012_Calib2.config
+
+# ----------------
+# 4. Global sequential calibration
+
+ApplyGSCCorrection:   true
+GSCFactorsFile: CalibrationFactors/GSC_factors_Aug2012.root
+#Order of GSC correction is Tile0->EM3->nTrk->trackWIDTH, use the GSCDepth flag to control the last correction applied (acceptable values: "Tile0", "EM3", "nTrk", "trackWIDTH"/"Full")
+GSCDepth: Full
+
+######################
+

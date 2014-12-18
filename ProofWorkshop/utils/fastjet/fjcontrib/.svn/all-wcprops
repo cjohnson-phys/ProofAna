@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/762/contrib/trunk
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/676/contrib/trunk/configure
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/569/contrib/trunk/Makefile.in
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/43/contrib/trunk/AUTHORS
+END
+DEVEL-GUIDELINES
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/582/contrib/trunk/DEVEL-GUIDELINES
+END
+VERSION
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/762/contrib/trunk/VERSION
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/762/contrib/trunk/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/44/contrib/trunk/COPYING
+END
+contribs.svn
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/762/contrib/trunk/contribs.svn
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/762/contrib/trunk/NEWS
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/632/contrib/trunk/README
+END

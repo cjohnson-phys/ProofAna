@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/566/contrib/trunk/scripts
+END
+register-new-contrib.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/57/contrib/trunk/scripts/register-new-contrib.sh
+END
+release-contrib.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/57/contrib/trunk/scripts/release-contrib.sh
+END
+new-contrib-from-template.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/57/contrib/trunk/scripts/new-contrib-from-template.sh
+END
+update-contribs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/361/contrib/trunk/scripts/update-contribs.sh
+END

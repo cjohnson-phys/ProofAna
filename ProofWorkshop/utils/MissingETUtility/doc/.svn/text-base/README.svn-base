@@ -1,0 +1,27 @@
+How I Run
+
+After downloading the package do:
+> source downloader.sh
+> source compiler.sh
+
+this will download the other systematic tools in the run folder and do standalone compiling for those that need it (just the jet tools compile for now; muon and egamma are finicky, but eventually will do that too)
+
+> source scripts/export.sh
+
+
+do the following commands to run, e.g., Example.C
+
+copy Example.* into the run directory and run from there
+
+
+root
+ gSystem->Load("../StandAlone/libMETUtility.so");
+ gSystem->Load("JetUncertainties/StandAlone/libJetUncertainties.so");
+gROOT->ProcessLine(".L EnergyRescalerTool/EnergyRescaler.cxx+");
+gROOT->ProcessLine(".L MuonMomentumCorrections/root/SmearingClass.h+");
+gSystem->Load("JetResolution/StandAlone/libJERProvider.so");
+.L Example.C
+Example ex;
+ex.Loop();
+.q
+

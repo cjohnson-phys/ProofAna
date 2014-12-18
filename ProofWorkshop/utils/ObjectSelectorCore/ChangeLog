@@ -1,0 +1,90 @@
+2012-03-05  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* ObjectSelectorCore/TSelectorToolBase.h: Move class name to TString
+	* tag ObjectSelectorCore-00-00-17
+
+2012-03-01  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* ObjectSelectorCore/TAccept.h: Adding void clearPositive() method.
+	* tag ObjectSelectorCore-00-00-16
+
+2012-02-21  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* scripts/CreateNewSelectorSkeleton.py: Update to generate PROOF support.
+	* tag ObjectSelectorCore-00-00-15
+
+2012-02-16  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* ObjectSelectorCore/AthSelectorTool.h: #include TAccept instead of forward declaration.
+	* scripts/CreateNewSelectorSkeleton.py: Update to generate new interface.
+	* tag ObjectSelectorCore-00-00-14
+
+2012-01-23  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* ObjectSelectorCore/IAthSelectorTool.h: Create a pure interface class for the Athena world.
+	* ObjectSelectorCore/TAccept.h: Make destructor virtual and improve PROOF convenience.
+
+2011-11-28  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* scripts/CreateNewSelectorSkeleton.py: Fix some bugs.
+	* tag ObjectSelectorCore-00-00-13
+
+2011-11-20  Karsten Koeneke  <kkoeneke@KarstenKoenekeMacBookPro.local>
+
+	* scripts/CreateNewSelectorSkeleton.py (CreateTSelectorSourceFile): Fix code generator.
+	* Root/TAccept.cxx (TAccept): Fix coverity bug 52083
+	* tag ObjectSelectorCore-00-00-12
+
+2011-09-15  Karsten Koeneke  <kkoeneke@pb-d-128-141-134-205.cern.ch>
+
+	* scripts/CreateNewSelectorSkeleton.py: Improve the script.
+	* tag ObjectSelectorCore-00-00-10
+
+2011-07-27  Karsten Koeneke  <kkoeneke@pb-d-128-141-37-107.cern.ch>
+
+	* scripts/CreateNewSelectorSkeleton.py: Update script.
+	* tag ObjectSelectorCore-00-00-09
+
+2011-07-26  Karsten Koeneke  <kkoeneke@pb-d-128-141-37-107.cern.ch>
+
+	* ObjectSelectorCore/TAccept.h: Put in protections against not allowed parameters. Change bool() operator.
+	* tag ObjectSelectorCore-00-00-08
+
+2011-07-20  Karsten Koeneke  <kkoeneke@karstenkoenekemacbookpro.fritz.box>
+
+	* Removing Makefile.Standalone (relying now on RootCore)
+	* Cleanup and arrive at a fully working version (hopefully)
+	* tag ObjectSelectorCore-00-00-07
+
+2011-07-20  Karsten Koeneke  <kkoeneke@karstenkoenekemacbookpro.fritz.box>
+
+	* ObjectSelectorCore/TAccept.h: Adding reflex dictionary
+	* tag ObjectSelectorCore-00-00-06
+
+2011-07-15  Karsten Koeneke  <kkoeneke@pb-d-128-141-37-73.cern.ch>
+
+	* ObjectSelectorCore/ObjectSelectorCoreDict.h: Adding dictionary
+	* tag ObjectSelectorCore-00-00-05
+
+2011-07-12  Karsten Koeneke  <kkoeneke@pb-d-128-141-37-119.cern.ch>
+
+	* Root/TExampleSelectorTool.cxx: Fix compile time warnings
+	* tag ObjectSelectorCore-00-00-04
+
+2011-06-23  Karsten Koeneke  <kkoeneke@cern.ch>
+
+	* Root/LinkDef.h: Improve.
+	* Add Makefile.RootCore
+	* tag ObjectSelectorCore-00-00-03
+
+2011-05-16  Karsten Koeneke  <kkoeneke@lxplus315.cern.ch>
+
+	* cmt/Makefile.Standalone: Improve.
+	* tag ObjectSelectorCore-00-00-02
+
+2011-05-09  Karsten Koeneke  <kkoeneke@lxplus403.cern.ch>
+
+	* First version.
+	* tag ObjectSelectorCore-00-00-01
+	
+

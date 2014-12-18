@@ -1,0 +1,65 @@
+# fastjet ProofAna makefile wrapper
+
+export PATH:=$(PWD)/utils/fastjet:$(PATH)
+
+INCLUDES += -Iutils/fastjet/include
+INCLUDES += -Iutils/fastjet/tools/
+INCLUDES += -Iutils/fastjet/fjcontrib/
+INCLUDES += -Iutils/fastjet/plugins/FlavKt
+
+FASTJETFILE := $(OUTPUTDIR)/libFastjet.so
+FASTJETPLUGINFILE := $(OUTPUTDIR)/libFastjetPlugins.so
+FASTJETTOOLSFILE := $(OUTPUTDIR)/libFastjetTools.so
+FASTJETCONTRIBJETCLEANSERFILE := $(OUTPUTDIR)/libJetCleanser.a
+#FASTJETCONTRIBNSUBJETTINESSFILE:= $(OUTPUTDIR)/libNsubjettiness.a
+FASTJETCONTRIBSOFTKILLERFILE := $(OUTPUTDIR)/libSoftKiller.a
+
+DEPS += $(FASTJETFILE)
+LOADS += if (gSystem->Load(\"$(FASTJETFILE)\") == -1) return -1;
+LOADS += if (gSystem->Load(\"$(FASTJETPLUGINFILE)\") == -1) return -1;	
+LOADS += if (gSystem->Load(\"$(FASTJETTOOLSFILE)\") == -1) return -1;	
+CLEANS += fastjetclean
+EXCLUDES += --exclude utils/fastjet/install-dir --exclude utils/fastjet/Makefile --exclude utils/fastjet/libtool --exclude utils/fastjet/\*/Makefile --exclude utils/fastjet/\*/\*/Makefile --exclude utils/fastjet/\*/\*/\*/Makefile --exclude \*.lo --exclude \*.la --exclude utils/fastjet/example/01-basic --exclude utils/fastjet/example/02-jetdef --exclude utils/fastjet/example/04-constituents --exclude utils/fastjet/example/05-eplus_eminus --exclude utils/fastjet/example/06-area --exclude utils/fastjet/example/07-subtraction --exclude utils/fastjet/example/08-selector --exclude utils/fastjet/example/09-user_info --exclude utils/fastjet/example/10-subjets --exclude utils/fastjet/example/11-filter --exclude utils/fastjet/example/12-boosted_higgs --exclude utils/fastjet/example/13-boosted_top --exclude utils/fastjet/example/14-groomers --exclude utils/fastjet/example/fastjet_areas --exclude utils/fastjet/example/fastjet_example --exclude utils/fastjet/example/fastjet_timing_plugins --exclude utils/fastjet/plugins/SISCone/siscone/libtool --exclude utils/fastjet/fastjet-config
+
+# Rule to compile fastjet
+$(FASTJETFILE) :
+	@echo "Compiling fastjet contrib package"
+	@echo $(PWD)/utils/fastjet/
+	@cd $(PWD)/utils/fastjet/fjcontrib; echo $(PWD);  ./configure CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)" FC="gfortran" FCFLAGS="-O2 -fPIC" --fastjet-config=$(PWD)/utils/fastjet/fastjet-config  --prefix=$(PWD)/utils/fastjet/install-dir 
+	@echo $(PWD)
+	@ls -al
+	@echo "Compiling fastjet package"
+	@cd $(PWD)/utils/fastjet; ./configure CXXFLAGS="$(CXXFLAGS)" LDFLAGS="$(LDFLAGS)" FC="gfortran" FCFLAGS="-O2 -fPIC" --enable-shared --disable-static --enable-monolithic \
+        --prefix=$(PWD)/utils/fastjet/install-dir \
+	--enable-siscone=no --enable-cdfcones=no --enable-nesteddefs=no --enable-nesteddefs=no --enable-jade=no --enable-eecambridge=no #--enable-flavkt=yes
+	@echo $(PWD)
+	@ls -al
+	@make -C utils/fastjet/ -f Makefile clean
+	@make -C utils/fastjet/ -f Makefile
+	@make -C utils/fastjet/ -f Makefile install
+	@make -C utils/fastjet/fjcontrib -f Makefile clean
+	@make -C utils/fastjet/fjcontrib -f Makefile
+	@make -C utils/fastjet/fjcontrib -f Makefile install
+
+ifeq ($(PLATFORM),macosx)
+	@ln -sf ../utils/fastjet/install-dir/lib/libfastjet.dylib $(FASTJETFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libfastjetplugins.dylib $(FASTJETPLUGINFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libfastjettools.dylib $(FASTJETTOOLSFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libJetCleanser.a $(FASTJETCONTRIBJETCLEANSERFILE)
+#	@ln -sf ../utils/fastjet/install-dir/lib/libNsubjettiness.a $(FASTJETCONTRIBNSUBJETTINESSFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libSoftKiller.a $(FASTJETCONTRIBSOFTKILLERFILE)
+else
+	@ln -sf ../utils/fastjet/install-dir/lib/libfastjet.so $(FASTJETFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libfastjetplugins.so $(FASTJETPLUGINFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libfastjettools.so $(FASTJETTOOLSFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libJetCleanser.a $(FASTJETCONTRIBJETCLEANSERFILE)
+#	@ln -sf ../utils/fastjet/install-dir/lib/libNsubjettiness.a $(FASTJETCONTRIBNSUBJETTINESSFILE)
+	@ln -sf	../utils/fastjet/install-dir/lib/libSoftKiller.a $(FASTJETCONTRIBSOFTKILLERFILE)
+endif
+	
+# Cleaning command
+fastjetclean:
+	@make -C utils/fastjet/ -f Makefile clean
+	@make -C utils/fastjet/fjcontrib -f Makefile clean
+
+

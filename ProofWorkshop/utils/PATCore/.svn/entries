@@ -1,0 +1,83 @@
+10
+
+dir
+373861
+svn+ssh://svn.cern.ch/reps/atlasinst/Institutes/SLAC/ProofAnaPackages/ProofWorkshop/trunk/utils/PATCore
+svn+ssh://svn.cern.ch/reps/atlasinst
+
+
+
+2013-12-09T06:01:44.944609Z
+345861
+mswiatlo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28d52da6-859c-4cdc-abcc-1ec3d2c02001
+
+python
+dir
+
+share
+dir
+
+Root
+dir
+
+cmt
+dir
+
+scripts
+dir
+
+src
+dir
+
+ChangeLog
+file
+
+
+
+
+2014-12-17T16:48:30.999688Z
+5a5a05fa4bd6d2a270265616b33c75af
+2013-12-09T06:01:44.944609Z
+345861
+mswiatlo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+774
+
+PATCore
+dir
+

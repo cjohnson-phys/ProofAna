@@ -1,0 +1,10 @@
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00001.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00002.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00003.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00004.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00005.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00006.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00007.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00008.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00009.merged.root
+root://bnlt3lrd1.usatlas.bnl.gov//atlas/user.lezhou.mc12_8TeV.182307.MadGraphPythia8_AU2CTEQ6L1_RSG_hh_bbbb_m1500.NTUP_COMMON.e2227_s1581_s1586_r4168_r3549.v2.skinny.131120053724/user.lezhou.006113._00010.merged.root

@@ -1,0 +1,92 @@
+10
+
+dir
+373861
+svn+ssh://svn.cern.ch/reps/atlasinst/Institutes/SLAC/ProofAna/trunk
+svn+ssh://svn.cern.ch/reps/atlasinst
+
+
+
+2014-11-24T19:47:41.831927Z
+372070
+mswiatlo
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+28d52da6-859c-4cdc-abcc-1ec3d2c02001
+
+analyses
+dir
+
+utils
+dir
+
+macros
+dir
+
+run
+dir
+
+config
+dir
+
+lib
+dir
+
+scripts
+dir
+
+core
+dir
+
+eventbuilders
+dir
+
+Makefile
+file
+
+
+
+
+2014-12-17T16:47:42.717969Z
+b5fa170582e14c9c3eebee4f95eac368
+2014-07-22T20:19:43.386150Z
+363764
+johnda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9175
+
+filelists
+dir
+

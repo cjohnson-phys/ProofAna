@@ -1,0 +1,8 @@
+PACKAGE          = ApplyJetResolutionSmearing
+PACKAGE_CXXFLAGS = -DAPPLYJETSMEAR_STANDALONE
+PACKAGE_LDFLAGS  = 
+PACKAGE_DEP      = 
+PACKAGE_PRELOAD  = Net
+PACKAGE_DEP      = JetResolution
+
+include $(ROOTCOREDIR)/Makefile-common

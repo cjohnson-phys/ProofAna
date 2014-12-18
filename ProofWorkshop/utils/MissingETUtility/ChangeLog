@@ -1,0 +1,861 @@
+2013-05-12 TJ Khoo <khoo@cern.ch>
+	* Tagging MissingETUtility-01-02-01
+
+2013-05-11 TJ Khoo <khoo@cern.ch>
+	M       Root/LinkDef.h
+	M       Root/METUtility.cxx
+	M       macros/runExample.C
+	M       macros/Example.C
+	M       MissingETUtility/METUtility.h
+	M       src/METUtilityAthTool.cxx
+	* Make METObject and PhysicsObject nested classes in METUtility
+
+2013-05-09 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	* Implement testing code for el-jet overlap bug patch -- to be validated
+
+2013-05-09 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       cmt/Makefile.Standalone
+	M       macros/runExample.C
+	M       scripts/downloader.sh
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilAlg.cxx
+	* Fix Makefile.Standalone for newer ROOT versions
+	* CellOut -> SoftTerms
+	* Tagged MissingETUtility-01-02-00
+
+2013-04-05 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       macros/runExample.C
+	M       macros/EventReader.h
+	M       macros/Example.C
+	M       MissingETUtility/METUtility.h
+	M       scripts/variables.list
+	M       src/METUtilityAthD3PDTool.cxx
+	M       src/METUtilityAthD3PDTool.h
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilAlg.cxx
+	M       src/METUtilityAthTool.h
+	M       src/METUtilAlg.h
+	* Rename CellOut to SoftTerms everywhere
+	* Bugfix in Eloss
+
+2013-03-27 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M       src/METUtilityAthTool.cxx
+	M	src/METUtilAlg.cxx
+	* Fix bugs in deltaMissingET and mu Eloss correction
+	* Pileup code for clusters and tracks
+	M       scripts/variables.list
+	M       macros/EventReader.C
+	M       macros/EventReader.h
+	M       macros/Example.C
+	* Add cases for ST and SA muons
+
+2013-03-15 TJ Khoo <khoo@cern.ch>
+	M       src/METUtilityAthTool.cxx
+	M	src/METUtilAlg.cxx
+	* Minor tweak for nicer namespace use
+	
+2013-03-12 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M	MissingETUtility/METUtility.h
+	M       macros/Example.C
+	M       macros/Example.h
+	* Optimise object handling by not storing objects with weight 0
+	* Eliminate SoftJets and CellOut_Eflow configuration
+	* Implement JVF cuts and muon Eloss parameterisation
+
+2013-02-28 TJ Khoo <khoo@cern.ch>
+	M       MissingETUtility/IMETUtilityAthTool.h
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilityAthTool.h
+	* Add fix for MET rebuilding from Muid and Muons in AOD
+	* Expunge CaloMuons from AOD tool
+	* Tagged MissingETUtility-01-01-04, small patch in 01-01-04-01
+
+2013-02-27 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M	MissingETUtility/METUtility.h
+        M       src/METUtilAlg.cxx
+	* New ptHard uncertainty numbers from M Testa
+	* Reorganisation of SoftTerms computation into a single method
+	M       share/METUtil_topOptions.py
+	A	share/METUtil_rerunMETjO.py
+	* Add some useful options for Athena running
+
+2013-02-21 TJ Khoo <khoo@cern.ch>
+	M       macros/runExample.C
+	M       macros/EventReader.C
+	M       macros/EventReader.h
+	M       macros/Example.C
+	* Update of Example macro to use recent PAT tools
+
+2013-02-18 TJ Khoo <khoo@cern.ch>
+	M       cmt/requirements
+	M       Root/METUtility.cxx
+        M       share/METUtil_topOptions.py
+	M       macros/runExample.C
+	M       macros/EventReader.C
+	M       macros/EventReader.h
+	M       macros/Example.C
+	M       MissingETUtility/METUtility.h
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilAlg.cxx
+	M       src/METUtilityAthTool.h
+	M       scripts/downloader.sh
+	* Monolithic update of all kinds of stuff
+	* Bugfix for region cut in MuonTotal
+	* Change to handling of multiple energy scale systematics (jets and egamma)
+	* Updating METUtilityAthTool to use most recent PAT tools and including some other options in the jO
+
+2012-11-30 TJ Khoo <khoo@cern.ch>
+	M       macros/Example.C
+	M       MissingETUtility/METUtility.h
+	M       scripts/variables.list
+	M       scripts/compiler.sh
+	* Add methods to reset the ET or phi for METObjects, motivated by redirecting phi of STVF
+	* Tag MissingETUtility-01-01-03
+
+2012-11-27 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M       macros/Example.C
+	M	macros/EventReader.h
+	M	macros/runExample.C
+	* Pilot test for MissingET-03-03-44, MissingETEvent-00-41-22
+	* Merged pileup-suppressed and non-pileup-suppressed MET into one composition map
+	* Jet pileup-suppression algorithm can be selected via statusWord
+	* D3PDs are broken, so awaiting corrections there.
+
+2012-10-01 TJ Khoo <khoo@cern.ch>
+	M      Root/METUtility.cxx
+	* Correction to multiple systematics in SoftTerms
+	* Add test for equality of pT size and wet size when setting objects
+	* Tag MissingETUtility-01-01-02
+
+2012-09-29 TJ Khoo <khoo@cern.ch>
+        M      MissingETUtility/METUtility.h
+	M      Root/METUtility.cxx
+	* Add a setObjects overload with vector<TLorentzVector> argument.
+	
+2012-09-26 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	* More eta cut fixes
+	* Robust encoding of multiple systematics
+	* Tag MissingETUtility-01-01-01
+
+	M       Root/LinkDef.h
+	M       Root/METUtility.cxx
+	M	macros/runExample.C
+	M       MissingETUtility/METUtility.h
+	* Possibly needless additions to LinkDef for some STL classes
+	* Patch from Giacinto Picquadio and Heather Gray to handle multiple JES nuisance parameters
+
+2012-09-19 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       macros/Example.C
+	M	MissingETUtility/METUtility.h
+	M	src/METUtilityAthTool.cxx
+	M       src/METUtilAlg.cxx
+	M       src/METUtilityAthTool.h
+	* Fix eta cuts... eta values are not boolean!
+	* Remove lots of legacy code: FwdEtaCut, CellFix, AllClusters and Pileup uncertainties
+	* Change systematics enum to a bitmask to allow correlations to be checked
+	* Tag MissingETUtility-01-01-00
+
+2012-09-11 TJ Khoo <khoo@cern.ch>
+        M       MissingETUtility/METUtility.h
+        M       Root/METUtility.cxx
+	* Implement region enum and options to set region (|eta| cuts) for calo objects used in MET computation
+
+2012-09-06 TJ Khoo <khoo@cern.ch>
+        M       Root/METUtility.cxx
+	* Prevent muons from getting -ve pT when charge assignment differs between combined and MS muons
+
+2012-07-27 TJ Khoo <khoo@cern.ch>
+        M       Root/LinkDef.h
+	M       Root/METUtility.cxx
+	M       Root/TESUncertaintyProvider.cxx
+	M       MissingETUtility/METUtility.h
+	M       MissingETUtility/TESUncertaintyProvider.h
+	A  +    scripts/variables.list
+	M       scripts/genReader.py
+	* Some fixes for TESUncertaintyProvider and standalone compilation
+	* Update the ptHard systematics to use mu and not Nvtx
+	* Tagged MissingETUtility-01-00-10
+
+2012-07-11 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M       src/METUtilityAthTool.cxx
+	* Apply bugfix to resolution uncertainty setting for muons (thanks to M. Bellomo and A. Nelson)
+	* Fix METUtilityAthTool setting of isSTVF
+	* Tag this MissingETUtility-01-00-09
+
+2012-07-07 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       macros/Example.h
+	M       macros/Example.C
+	* Correct some accidental reversions
+	* Tagging MissingETUtility-01-00-08
+
+2012-07-03 TJ Khoo <khoo@cern.ch>
+	M       Root/LinkDef.h
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M       macros/Example.h
+	M       macros/Example.C
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilityAthTool.h
+	* LinkDef mods for TESUncertaintyProvider
+	* Added handling of some more general cases in deltaMissingET
+	* Put 2012, STVF flags in METUtilityAthTool configurables
+
+2012-07-03 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* Reactivate new pthard uncertainties
+
+2012-06-28 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* SoftTerms_ptHard stuff needs some testing. For now, force 2011 RefFinal (no STVF) for ptHard
+
+2012-06-27 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* Update SoftTerms_ptHard uncertainties
+
+2012-06-22 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	* Update SoftTerms uncertainties with 2011/2012 variations and STVF/no STVF configuration
+
+2012-06-10 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	A       MissingETUtility/IMETUtilityAthD3PDTool.h
+	A       src/METUtilityAthD3PDTool.cxx
+	M       src/components/MissingETUtility_entries.cxx
+	A       src/METUtilityAthD3PDTool.h
+	* Athena D3PD reading tool from Will Buttinger
+
+2012-05-28 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* Don't apply soft terms systematics to sumET
+
+2012-05-28 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	* Const-correctness additions for METObject
+	* Return standard SoftTerms value for SoftTerms_ptHard instead of NaN when no ptHard component
+	* Use fabs(sumET) in ResoSoftTerms uncertainty to avoid problems with negative sumET in the sqrt
+	* Tagging MissingETUtility-01-00-06
+
+2012-05-23 TJ Khoo <khoo@cern.ch>
+	M       macros/Example.h
+	M       macros/Example.C
+	* Add histogramming to examples
+
+2012-05-17 TJ Khoo <khoo@cern.ch>
+	M       cmt/requirements
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	* Fix a checkreq error
+	* Correct correlations for random numbers in CellOut and SoftJets
+	* Adjustment to soft terms scale uncertainty
+	* Tagging MissingETUtility-01-00-05
+
+2012-05-16 TJ Khoo <khoo@cern.ch>
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilityAthTool.h
+	* Switch to base MultijetJESUncertaintyProvider
+	* Athena implementations currently broken
+	* Renders this compatible with JetUncertainties-00-05-09-02
+	* Tagging MissingETUtility-01-00-04
+
+2012-05-10 TJ Khoo <khoo@cern.ch>
+	M       cmt/requirements
+	* Fix dependencies for parallel compilation a la nightlies
+	D       cmt/version.cmt
+	* Handled by cmt co 
+	M       Root/METUtility.cxx
+	M       macros/runExample.C
+	M       macros/variables.list
+	M       macros/EventReader.h
+	M       macros/Example.C
+	M       MissingETUtility/METUtility.h
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilityAthTool.h
+	* Update to use JetUncertainties-00-05-03 and above
+	* Tagged MissingETUtility-01-00-03
+
+2012-05-03 TJ Khoo <khoo@cern.ch>
+	M         Root/METUtility.cxx
+	* Update of the soft terms resolution uncertainty to 2.1%, from 2.8%
+	* Tagging MissingETUtility-01-00-01, for official release
+
+2012-05-03 TJ Khoo <khoo@cern.ch>
+	M         Root/METUtility.cxx
+	* Correct the ResoSoftTerms smearing shift
+	* Tagging MissingETUtility-01-00-00
+	
+2012-05-01 TJ Khoo <khoo@cern.ch>
+        M         Example.C
+	M         MissingETUtility/METUtility.h
+	M         Root/METUtility.cxx
+	* Simplify calls for SoftTerms_ptHard uncertainties
+	* Privatise helper functions
+
+2012-05-01 TJ Khoo <khoo@cern.ch>
+	M         cmt/Makefile.RootCore
+	* Compilation fix
+	* Tagged MissingETUtility-00-02-17
+	M         MissingETUtility/METUtility.h
+	M         Root/METUtility.cxx
+	* Reinstate Pileup systematic
+	* Tagged MissingETUtility-00-02-18
+
+2012-04-29 TJ Khoo <khoo@cern.ch>
+	M         macros/Example.C
+	M         macros/Example.h
+	M         macros/EventReader.C
+	M         macros/EventReader.h
+	A         macros/runExample.C
+	D         macros/Example_SMWZ.C
+	D         macros/Example_SMWZ.h
+	D         macros/Example_SUSY.C
+	D         macros/Example_SUSY.h	
+	* Clean up examples
+	* Tagged 00-02-16 for the top WG
+	
+2012-04-27 TJ Khoo <khoo@cern.ch>
+	M       MissingETUtility/METUtility.h
+	M       Root/METUtility.cxx
+	M       scripts/downloader.sh
+	* Naming convention change for SoftTerms, silence complaints about muon scale/reso shift setting
+	* Explicitly set the gRandom seed to the int(1e5*phi) of the term for resolution smearing.
+	* This should allow randomness, while retaining reproducibility.
+	M         macros/Example.C
+	M         macros/Example.h
+	A         macros/EventReader.C
+	A         macros/EventReader.h
+	A         scripts/genReader.py
+	A         macros/variables.list
+	* Shiny new Example macros that should actually run.
+	* Incorporated demos of the new features.
+	* Work in progress.
+
+2012-04-23 TJ Khoo <khoo@cern.ch>
+        M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M       src/METUtilAlg.cxx
+	* Set up new SoftTerms component and uncertainties thanks to Milano & Frascati groups
+
+2012-04-21 TJ Khoo <khoo@cern.ch>
+	M       Root/LinkDef.h
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M       MissingETUtility/IMETUtilityAthTool.h
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilAlg.cxx
+	M       src/METUtilityAthTool.h
+	* First attempt at optimisation using enums rather than string comparisons.	
+
+2012-04-14 TJ Khoo <khoo@cern.ch>
+	M	macros/Example_SMWZ.C
+	M	macros/Example.C
+	* Caution against rebuilding taus
+
+2012-04-11 TJ Khoo <khoo@cern.ch>
+        M       Root/METUtility.cxx
+	M	macros/Example_SMWZ.C
+	M	macros/Example.C
+	M       MissingETUtility/METUtility.h
+	* Check against invalid sumET bins in sofft term uncertainties
+	* Add consistency check to make sure terms are being rebuilt successfully
+	
+2012-04-09 TJ Khoo <khoo@cern.ch>
+        M       Root/METUtility.cxx
+	* Scale by jet calibration appropriately when migrating jets
+
+2012-03-29 TJ Khoo <khoo@cern.ch>
+        M       Root/METUtility.cxx
+	M       macros/Example_SUSY.C
+	M	macros/Example.C
+	M	macros/Example_SMWZ.C
+	M       MissingETUtility/METUtility.h
+	* Corrections to examples re: pileup uncertainty
+	* Implement flag to allow migration of jets between RefJet and SoftJets based on scaling
+	* Tagging MissingETUtility-00-02-15
+
+2012-02-13 TJ Khoo <khoo@cern.ch>
+	M       macros/Example_SUSY.C
+	M       macros/Example.C
+	M       macros/Example_SMWZ.C
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilityAthTool.h
+	* Move to JetResolution-01-00-00
+	* No central value jet smearing
+	* Tagging MissingETUtility-00-02-14
+
+2012-02-13 TJ Khoo <khoo@cern.ch>
+	M       ../macros/Example_SUSY.C
+	M       ../macros/Example_SUSY.h
+	M       ../macros/Example.C
+	M       ../macros/Example_SMWZ.C
+	M       ../src/METUtilityAthTool.cxx
+	* Some corrections -- use pT in GeV for jet smearing
+	* More comments on how to exercise JER uncertainties
+
+2012-02-08 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* Correct implementation of new pileup uncertainty
+	* Tagging MissingETUtility-00-02-13
+	* NB 00-02-11 mistakenly tagged as 00-02-12
+	
+2012-02-04 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       macros/Example_SUSY.C
+	M       macros/Example.C
+	M       macros/Example_SMWZ.C
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilityAthTool.h
+	M       scripts/downloader.sh
+	* Update to current performance packages
+	* Examples updated
+	* Default pileup uncertainty is 6.6% and applied together with AllClusters
+	* Tagging MissingETUtility-00-02-11
+
+2012-01-24 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* Set MERID, MERMS flags correctly so these uncertainties can be used
+	* Tagging MissingETUtility-00-02-10
+
+
+2012-01-23 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* Bugfix for CellOut uncertainties
+	* Tagging MissingETUtility-00-02-09
+
+2012-01-20 TJ Khoo <khoo@cern.ch>
+	M       MissingETUtility/METUtility.h
+	* Reversed previous
+
+2012-01-16 TJ Khoo <khoo@cern.ch>
+	M       MissingETUtility/METUtility.h
+	D	StandAlone
+	* Changes for RootCore compilation
+
+2012-01-16 TJ Khoo <khoo@cern.ch>
+	A       Root/METUtility.cxx
+	* Correct resolution shift checks
+	* Tagging MissingETUtility-00-02-08
+
+2012-01-06 TJ Khoo <khoo@cern.ch>
+        A       MissingETUtility/TESUncertaintyProvider.h
+	A       Root/TESUncertaintyProvider.cxx
+	* Add TESUncertaintyProvider source for testing
+
+2011-12-31 TJ Khoo <khoo@cern.ch>
+        M       cmt/Makefile.Standalone
+	A  +    Root/LinkDef.h
+	D	MissingETUtility/LinkDef.h
+	* Tweaks for RootCore compilation
+
+
+2011-12-27 TJ Khoo <khoo@cern.ch>
+	M       cmt/Makefile.Standalone
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	* Add ClassDef and ClassImp macros for standalone compilation
+
+2011-12-19 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       macros/Example_SUSY.C
+	M       macros/Example.C
+	M       macros/Example_SMWZ.C
+	M       src/METUtilityAthTool.cxx
+	M	src/METUtilityAthTool.h
+	M	src/components/MissingETUtility_entries.cxx
+	* Set up examples for new TESUncertaintyProvider
+	* Fix include paths for grid usage
+
+2011-12-17 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       src/METUtilityAthTool.cxx
+	M	src/METUtilAlg.cxx
+	M	src/METUtilityAthTool.h
+	* Acommodate interface change in new JERProvider
+	* Allow sumET to be modified by SoftJets and CellOut sysstematics
+
+2011-11-29 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	* Require arguments of the public interface to be const
+
+2011-11-19 TJ Khoo <khoo@cern.ch>
+        M       cmt/requirements
+	M       Root/METUtility.cxx
+	A       macros/Example_SUSY.C
+	A       macros/Example_SMWZ.h
+	A       macros/Example_SUSY.h
+	M       macros/Example.C
+	A       macros/Example_SMWZ.C
+	D       MissingETUtility/METUtilityAthTool.h
+	D       MissingETUtility/METUtilAlg.h
+	M       src/METUtilityAthTool.cxx
+	M       src/components/MissingETUtility_entries.cxx
+	M       src/METUtilAlg.cxx
+	A  +    src/METUtilityAthTool.h
+	A  +    src/METUtilAlg.h
+	* Include the analysis-specific examples in macros/
+	* Moved component headers into the src directory, nobody should be including these.
+	* Fixed a CellOut bug that never returned systematics if clusters weren't set individually
+	* Added a check for zero weights when doing CellFix
+	* Make library patterns public
+	* Add two reset calls to METUtilityAthTool
+	* tagging MissingETUtility-00-02-07
+
+2011-10-17 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtilityAthTool.h
+	M       src/METUtilityAthTool.cxx
+	* Address a namespace change in dependencies
+	* Remove an erroneous character
+	* tagging MissingETUtility-00-02-06
+
+2011-09-30 TJ Khoo <khoo@cern.ch>
+	M       share/METUtil_topOptions.py
+	M       cmt/requirements
+	M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M       MissingETUtility/METUtilityAthTool.h
+	M       MissingETUtility/IMETUtilityAthTool.h
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilAlg.cxx
+	M       scripts/downloader.sh
+	* Nixed use of TVector3 for storing weights -- an array will do
+	* Sorted out CellOut_Eflow rebuilding bug due to how TLorentzVector treats -ve pT's
+	* Implemented CellOut_Eflow rebuilding from AOD
+	* tagging MissingETUtility-00-02-05
+
+2011-09-16 TJ Khoo <khoo@cern.ch>
+	M       share/METUtil_topOptions.py
+	M       cmt/requirements
+	M       Root/METUtility.cxx
+	M       macros/Example.C
+	M       MissingETUtility/METUtilityAthTool.h
+	M       src/METUtilityAthTool.cxx
+	M       src/METUtilAlg.cxx
+	M       scripts/downloader.sh
+	* Fixes for evtStore retrieval
+	* use MES uncertainty accessor functions
+	* changes to METComposition choice for Athena tool
+	* requirements fixes to enable installed library use
+	* include statements for OSX build
+	* update MuonMomentumCorrections version
+	* tagging MissingETUtility-00-02-04
+
+2011-09-09 TJ Khoo <khoo@cern.ch>
+        M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M	src/METUtilityAthTool.cxx
+	* add reset function to METUtility
+
+2011-09-02 TJ Khoo <khoo@cern.ch>
+        M       Root/METUtility.cxx
+	M       MissingETUtility/METUtility.h
+	M	src/METUtilityAthTool.cxx
+	M	src/METUtilAlg.cxx
+	* fixed a problem in RefMuon when setting the muon terms directly. 
+	* some other minor tinkering
+
+2011-08-29 TJ Khoo <khoo@cern.ch>
+	M       Root/METUtility.cxx
+	* fixed photon term -- now can reconstruct MET_RefGamma correctly.
+
+2011-08-23 TJ Khoo <khoo@cern.ch>
+	M       src/METUtilityAthTool.cxx
+	* make C++ defaults reproduce MET_RefFinal out of the box.
+
+2011-08-22 TJ Khoo <khoo@cern.ch>
+	M       cmt/version.cmt
+	M       src/METUtilityAthTool.cxx
+	* correct some versioning silliness
+	* plug a memory leak
+	* tagging MissingETUtility-00-02-03
+
+2011-08-21 TJ Khoo <khoo@cern.ch>
+	M       MissingETUtility/METUtilAlg.h
+	M       src/METUtilityAthTool.cxx
+	M	src/METUtilAlg.cxx
+	M       share/METUtil_topOptions.py
+	* fix a segfault in setMuons
+	* add histogrammming to algorithm for MET checks
+
+2011-08-18 TJ Khoo <khoo@cern.ch>
+        M       src/METUtilityAthTool.cxx
+	* modifications in order to use new muon SmearingClass accessor functions for the MES systematics
+	* tagging MissingETUtility-00-02-01
+	* didn't commit... retagging MissingETUtility-00-02-02
+
+2011-08-15 TJ Khoo <khoo@cern.ch>
+        M       cmt/requirements
+	A       cmt/Makefile.RootCore
+	A       Root
+	A  +    Root/METUtility.cxx
+	D       src/METUtility.cxx
+	* first attempt at making this RootCore-compatible
+	M       cmt/Makefile.Standalone
+	M       cmt/Makefile.RootCore
+	* rootCore makefile corrections
+
+2011-08-11 TJ Khoo <khoo@cern.ch>
+        M       cmt/requirements
+	M       macros/Example.C
+	M       MissingETUtility/METUtility.h
+	D       MissingETUtility/METUtilityAthena.h
+	A       MissingETUtility/IMETUtilityAthTool.h
+	A  +    MissingETUtility/METUtilityAthTool.h
+	A       MissingETUtility/METUtilAlg.h
+	A  +    src/METUtilityAthTool.cxx
+	A       src/METUtilAlg.cxx
+	M       src/METUtility.cxx
+	D       src/METUtilityAthena.cxx
+	* renamed METUtilityAthena class to METUtilityAthTool to clarify function
+	* changed the uncertainty vector arguments to pass by reference in METUtility's setObjectX methods -- they were otherwise not modifying the data
+	* added a test/example algorithm that implements the tool, with accompanying jobO
+	* tagging MissingETUtility-00-02-00
+
+2011-08-6 TJ Khoo <khoo@cern.ch>
+	M       cmt/requirements
+	M       macros/Example.C
+	A       MissingETUtility/METUtilityAthena.h
+	A       src/METUtilityAthena.cxx
+	M       MissingETUtility/METUtility.h
+	M	MissingETUtility/METUtilityAthena.h
+	M       src/METUtility.cxx
+	M       src/METUtilityAthena.cxx
+	* added functionality to METUtilityAthena class
+	* renamed METUtility::MissingET to METUtility::getMissingET to avoid clash with MissingET class
+	* fixed a couple of things in Example.C
+	* still needs testing, avoid tagging just now.
+
+2011-07-28 TJ Khoo <khoo@cern.ch>
+	M       cmt/requirements
+	M       cmt/version.cmt
+	A       MissingETUtility/METUtilityAthena.h
+	A       src/METUtilityAthena.cxx
+	* added basic wrapper for METUtility in Athena (no value added)
+	* still needs testing, avoid tagging just now.
+
+201107028 Jet Goodson <jgoodson@cern.ch>
+	R ROOT
+	A scripts
+	A scripts/Export.sh
+	A scripts/compile.sh
+	A scripts/downloader.sh
+	A doc/README
+	A MissingETUtility/LinkDef.h
+	M src/METUtility.cxx 
+	* added flag to allow Muid muons if using muid
+	*** Moved to standalone compile and reorganized package to faciliate that
+	* tagging MissingETUtility-00-01-00
+	* modified differentiation between muid and staco terms
+	* tagging MissingETUtility-00-01-01
+	
+2011-07-19 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.*
+	* got rid of pointers to save memory
+	* tagging MissingETUtility-00-00-24
+	A ROOT
+	A Standalone
+	A cmt/Makefile.Standalone
+	A MissingETUtility
+	M src/METUtility.*
+	* moved METUtility.C to src/METUtility.cxx
+	* moved METUtility.h to MissingETUtility/METUtility.h
+	A doc/CellOut.C
+	A doc/Softjets.C
+	
+	
+2011-07-15 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.C
+	* fixed bug with setting secondary 4-momenta for jets
+	* seems jet masses scale funny
+	* tagging MissingETUtility-00-00-23
+
+2011-07-14 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.C
+	* fixed index matching in setExtraJetParameters
+	* fixed call to setObjectMoment in same to call lcjets
+	* fixed trig error
+	* tagging MissingETutility-00-00-22
+
+
+2011-06-25 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.* 
+	* added eta <4.5 cut
+	* added controls not to add celloutfix if the term in question is turned off
+	M macro/Example.C
+	M macro/oldExample.C
+	* changed jet resolution handling
+	* tagging MissingETUtility-00-00-20
+	M src/METUtility.*
+	* added pileup options
+	* tagging MissingETUtility-00-00-21
+
+2011-06-17 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.C
+	M macros/oldExample.C
+	M macros/Example.C
+	* made cell fix automatic, has to be shut off by function
+	* tagging MissingETUtility-00-00-19
+
+	
+2011-06-16 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.C
+	* typo in SoftJets intercept
+	* tagging MissingETUtility-00-00-16
+	* updated JESUncertainty provider
+	* fixed typo in oldExmaple.C * Example.C 
+	* tagging MissingETUtility-00-00-17
+	* actually updated JESUncertainty provider
+	* tagging MissingETUtility-00-00-18
+	
+2011-06-15 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.*
+	* added deltaMissingET and absDeltaMissingET functions
+	* returns total uncertainty on MET
+	* tagging MissingETUtility-00-00-15
+
+2011-06-14 Jet Goodson
+	* updated handling off overlap cells with jets after conferring with Dag
+	* updated examples to match. Example.C is more accurate
+	* ironed out wrinkles in muons so it actually reconstructs
+	* tagging MissingETUtility-00-00-12
+	* fixed seg fault originating when the sumet is somehow negative (WTF?).
+	* tagging MissingETUtility-00-00-13
+	M src/METUtility.C
+	* diff now returns fab(none - up) + fabs(none - down) / none
+	* tagging MissingETUtility-00-00-14
+	
+2011-06-09 Jet Goodson <jgoodson@cern.ch>
+	M src/MissingET.h
+	* switched phi calc to atan2 instead of atan
+        M src/MissingET.C
+	* fixed foul up in RefTau	
+	* tagging MissingETUtility-00-00-11
+	
+	M src/MissingET.C
+	* got rid of anything having to do with tracks except the statuswordcalled tracks
+	M src/MissingET.h
+	* got rid of anything having to do with tracks
+	* killed spectroMomenergy, replaced with secondaryMomenergy for both spectro and LC jets
+
+	
+2011-06-07 Jet Goodson <jgoodson@cern.ch>
+	M macro/Example.C
+	M macro/oldExample.C
+	* fixed typo in metSys example
+	M src/METUtility.C/.h
+	* truncated PLHC uncertainties to match note.
+        * added scaleCorrection to the cell fix, to divide by EMJES moment in jets. Generalized for all physics objects, but if it isn't set it is default to 1.0
+	* caught double counting on RefMuon for cellfix
+	* added a cellfix override. If false, cellfix is not done at all
+	* added argument to apply SoftJet and CellOut systematics to SoftJets, CellOut_Eflow, and RefTau all at once
+	* tagging MissingETUtility-00-00-10
+	
+2011-06-06 Jet Goodson <jgoodson@cern.ch>
+        M src/METUtility.*
+	* updated cluster energy scale uncertainties
+	M macro/oldExample.C
+	M macro/Example.C
+	* continued fiddling with muons to get them to work
+	* tagging MissingETUtility-00-00-09
+
+	
+2011-06-03 Jet Goodson <jgoodson@cern.ch>
+	M src/METutility.*
+	* added cell fix, that moves objects with weight<=.5 to celloutEflow
+	* added trendline for SoftJets and CellOut systematics, propogating error beyond measured values last bin based on trend
+	* applied cellout systematic to RefTau
+	* changed call to CellOutEflow systematic to "CellOutEflowUp/Down"
+	* tagging MissingETUtility-00-00-08
+	
+2011-05-27 Jet Goodson <jgoodson@cern.ch>
+        M src/METUtility.*
+	* added option for up - down/none
+	* added more examples to oldExample.C
+	* updated CellOut/SoftJets with actual PLHC numbers
+	* tagging MissingETUtility-00-00-07
+	
+2011-05-26 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.*
+	* modified setElectronParamters, setMuonsParameters, setMuonExtraParamters, setPhotonParameters, and setTauParameters to not need Et or E. Simpler in the case of smearing.
+	* added another muon function to ease smearing
+	M macro/oldExample.C
+	* added a more detailed set of examples on systematics
+	A src/EnergyRescaler.*
+	A macro/SmearingClass.h
+	A macro/JERProvider.h
+	A macro/JerProviderPlots.root
+	* tagging MissingETUtility-00-00-06
+	* added option for up - down/none
+	* added more examples to oldExample.C
+	* tagging MissingETUtility-00-00-07
+	
+
+	
+2011-05-20 Jet Goodson <jgoodson@cern.ch>
+        M src/METUtility.cxx
+	M macros/oldExample.cxx
+	M macros/Example.cxx
+	M macros/JESUncertaintyProvider.*
+	M macros/JESUncertainty.root
+	* fixed CellOut systematics method, SoftJets method
+	* expanded examples
+	* tagging MissingETUtility-00-00-04
+	* fixed some flags
+	* tagging MissingETUtility-00-00-05
+	
+2011-05-19 Jet Goodosn <jgoodson@cern.ch>
+	M src/METUtility.*
+	* overloaded functions to handle vector weights instead of vector<vector<weights>>
+	A macros/oldExample.*
+	* macro to demonstrate vector weights use
+	* tagging MissingETUtility-00-00-03
+
+2011-05-17 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.*
+	R src/METUtility.cxx
+	A src/METUtility.C
+	A cmt/requirements
+	A cmt/version.cmt
+	A macro/Example.C
+	A macro/Example.h
+	A macro/JESUncertaintyProvider.cxx
+	A macro/JESUncertaintyProvider.h
+	A macro/JESUncertainty.root
+	* tagging MissingETUtility-00-00-02
+
+2011-05-16 Jet Goodson <jgoodson@cern.ch>
+	M src/METUtility.*
+	* moved to vector<vector< weights. 
+	* ironed out problems so that RefFinal can be reconstructed
+	* note, still lingering issue with Taus. Think TauRec run after MET changed energy scale. Checking on that.
+	* tagging MissingETUtility-00-00-01
+
+2011-05-12 Jet Goodson <jgoodson@cern.ch>
+	* package created
+	A ChangeLog
+	A src/
+	A doc/
+	A macros/
+	A src/METUtility.cxx
+	A src/METUtility.h
+	* tagging MissingETUtility-00-00-00
+
+	

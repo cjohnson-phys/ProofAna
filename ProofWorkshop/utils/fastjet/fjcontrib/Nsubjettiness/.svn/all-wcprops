@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0
+END
+example_advanced_usage.ref
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/example_advanced_usage.ref
+END
+example_v1p0p3.ref
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/example_v1p0p3.ref
+END
+NjettinessDefinition.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/NjettinessDefinition.cc
+END
+Njettiness.hh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/Njettiness.hh
+END
+Nsubjettiness.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/Nsubjettiness.cc
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/AUTHORS
+END
+VERSION
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/VERSION
+END
+AxesFinder.hh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/AxesFinder.hh
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/ChangeLog
+END
+example_v1p0p3.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/example_v1p0p3.cc
+END
+example_advanced_usage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/example_advanced_usage.cc
+END
+NjettinessPlugin.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/NjettinessPlugin.cc
+END
+WinnerTakeAllRecombiner.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/WinnerTakeAllRecombiner.cc
+END
+MeasureFunction.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/MeasureFunction.cc
+END
+example_basic_usage.ref
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/example_basic_usage.ref
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/README
+END
+NjettinessDefinition.hh
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/NjettinessDefinition.hh
+END
+Nsubjettiness.hh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/Nsubjettiness.hh
+END
+NjettinessPlugin.hh
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/NjettinessPlugin.hh
+END
+WinnerTakeAllRecombiner.hh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/WinnerTakeAllRecombiner.hh
+END
+example_basic_usage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/example_basic_usage.cc
+END
+MeasureFunction.hh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/MeasureFunction.hh
+END
+Njettiness.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/Njettiness.cc
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/NEWS
+END
+AxesFinder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/AxesFinder.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/712/contrib/contribs/Nsubjettiness/tags/2.1.0/Makefile
+END

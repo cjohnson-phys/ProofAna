@@ -1,0 +1,71 @@
+///////////////////////// -*- C++ -*- /////////////////////////////
+// IAthSelectorTool.h 
+// Header file for class IAthSelectorTool
+// Author: Karsten Koeneke <karsten.koeneke@cern.ch>
+/////////////////////////////////////////////////////////////////// 
+#ifndef OBJECTSELECTORCORE_IATHSELECTORTOOL_H
+#define OBJECTSELECTORCORE_IATHSELECTORTOOL_H 1
+
+// STL includes
+
+// HepMC / CLHEP includes
+
+// FrameWork includes
+#include "GaudiKernel/IAlgTool.h"
+
+// Include the return object
+#include "ObjectSelectorCore/TAccept.h"
+
+// Forward declaration
+class INavigable4Momentum;
+
+
+static const InterfaceID IID_IAthSelectorTool("IAthSelectorTool", 1, 0);
+
+class IAthSelectorTool
+  : virtual public ::IAlgTool
+{ 
+
+  /////////////////////////////////////////////////////////////////// 
+  // Public methods: 
+  /////////////////////////////////////////////////////////////////// 
+ public: 
+
+  /** Destructor: 
+   */
+  //virtual ~IAthSelectorTool(){};
+
+  /////////////////////////////////////////////////////////////////// 
+  // Const methods: 
+  ///////////////////////////////////////////////////////////////////
+  static const InterfaceID& interfaceID();
+
+
+  /** The main accept method: the actual cuts are applied here */
+  virtual const Root::TAccept& accept( const INavigable4Momentum* /*part*/ ) = 0;
+
+
+  /////////////////////////////////////////////////////////////////// 
+  // Non-const methods: 
+  /////////////////////////////////////////////////////////////////// 
+
+  /////////////////////////////////////////////////////////////////// 
+  // Protected data: 
+  /////////////////////////////////////////////////////////////////// 
+ protected: 
+
+}; 
+
+/// I/O operators
+//////////////////////
+
+/////////////////////////////////////////////////////////////////// 
+/// Inline methods: 
+/////////////////////////////////////////////////////////////////// 
+inline const InterfaceID& IAthSelectorTool::interfaceID() 
+{ 
+   return IID_IAthSelectorTool; 
+}
+
+
+#endif //> !OBJECTSELECTORCORE_IATHSELECTORTOOL_H

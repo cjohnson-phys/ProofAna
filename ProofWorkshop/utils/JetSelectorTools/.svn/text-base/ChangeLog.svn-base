@@ -1,0 +1,65 @@
+2012-03-06  Harinder Singh Bawa  <bawa@cern.ch>
+
+        * Root/TJetCleaningTool.cxx: Fixed eta bug in VeryLoose Jet
+        * Tagging JetSelectorTools-00-00-16
+
+2012-02-21  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* JetSelectorTools/TJetCleaningTool.h: Add the ROOTCORE preprocessor if.
+	* Tagging JetSelectorTools-00-00-15
+
+2012-02-16  Karsten Koeneke  <karsten.koeneke@cern.ch>
+
+	* JetSelectorTools/AthJetCleaningTool.h: Use new interface.
+	* Tagging JetSelectorTools-00-00-14
+
+2011-12-26  Haifeng Li  <Haifeng.Li@cern.ch>
+
+	* Tagging JetSelectorTools-00-00-13
+	* Root/TJetCleaningTool.cxx : Fix warning
+
+2011-12-22  Haifeng Li  <Haifeng.Li@cern.ch>
+
+	* Tagging JetSelectorTools-00-00-12
+	* Root/TJetCleaningTool.cxx : Fix LArQmean definition
+
+2011-12-21  Haifeng Li  <haifeng.li@cern.ch>
+
+	* Implementing the VeryLoose (Looser) cuts
+
+2011-11-20  Karsten Koeneke  <kkoeneke@KarstenKoenekeMacBookPro.local>
+
+	* Root/TJetCleaningTool.cxx (TJetCleaningTool): Fix possible coverity warnings
+	* tag JetSelectorTools-00-00-09
+
+2011-08-26  Haifeng Li <Haifeng.Li@cern.ch>
+
+	* tagging JetSelectorTools-00-00-07
+	* src/ARAJetCleaningTool.cxx: Change eta to emscale eta, 
+	use jet moment for Hec quality. 
+	
+2011-08-04  Karsten Koeneke  <kkoeneke@pb-d-128-141-37-107.cern.ch>
+
+	* Root/TJetCleaningTool.cxx: Fix tight cuts
+	* tag JetSelectorTools-00-00-06
+
+2011-07-27  Karsten Koeneke  <kkoeneke@pb-d-128-141-37-107.cern.ch>
+
+	* python/ConfiguredARAJetCleaningTools.py: Add.
+	* tag JetSelectorTools-00-00-05
+
+2011-07-26  Karsten Koeneke  <kkoeneke@karstenkoenekemacbookpro.fritz.box>
+
+	* src/ARAJetCleaningTool.cxx: Fix retrieval of negative energy from jet.
+	* tag JetSelectorTools-00-00-03
+
+2011-07-25  Karsten Koeneke  <kkoeneke@lxplus432.cern.ch>
+
+	* Root/TJetCleaningTool.cxx: Removing cout messages.
+	* tag JetSelectorTools-00-00-02
+
+2011-07-22  Karsten Koeneke  <kkoeneke@cern.ch>
+
+	* Create the first version of this package
+	* tag JetSelectorTools-00-00-01
+

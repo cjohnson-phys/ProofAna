@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0
+END
+example_advanced_usage.ref
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_advanced_usage.ref
+END
+ModifiedMassDropTagger.hh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/ModifiedMassDropTagger.hh
+END
+Doxyfile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/Doxyfile
+END
+SoftDrop.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/SoftDrop.cc
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/AUTHORS
+END
+VERSION
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/VERSION
+END
+RecursiveSymmetryCutBase.hh
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/RecursiveSymmetryCutBase.hh
+END
+example_softdrop.ref
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_softdrop.ref
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/ChangeLog
+END
+example_mmdt.ref
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_mmdt.ref
+END
+example_advanced_usage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_advanced_usage.cc
+END
+Recluster.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/Recluster.cc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/README
+END
+example_recluster.ref
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_recluster.ref
+END
+SoftDrop.hh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/SoftDrop.hh
+END
+example_softdrop.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_softdrop.cc
+END
+example_mmdt.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_mmdt.cc
+END
+example_mmdt_sub.ref
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_mmdt_sub.ref
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/TODO
+END
+Recluster.hh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/Recluster.hh
+END
+ModifiedMassDropTagger.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/ModifiedMassDropTagger.cc
+END
+example_recluster.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_recluster.cc
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/COPYING
+END
+example_mmdt_sub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/example_mmdt_sub.cc
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/NEWS
+END
+RecursiveSymmetryCutBase.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/RecursiveSymmetryCutBase.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/711/contrib/contribs/RecursiveTools/tags/1.0.0/Makefile
+END
