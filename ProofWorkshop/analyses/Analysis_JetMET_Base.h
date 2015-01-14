@@ -82,7 +82,8 @@ public :
   //making jets
   vector<fastjet::PseudoJet>    ObjsToPJ(const MomKey type, MomentObj* jet = 0);
   MomKey                        MakeJets(const fastjet::JetAlgorithm algo, const double jetR, const MomKey constType, const MomKey extra = "");
-  MomKey			MakeSKJets(const fastjet::JetAlgorithm algo, const double jetR, const MomKey constType, const double rapMax, const double grid_size, const bool doSoftKill);
+  MomKey			            MakeSKJets(const fastjet::JetAlgorithm algo, const double jetR, const MomKey constType, const double rapMax, const double grid_size, const bool doSoftKill);
+  MomKey                        GetSKrho(const MomKey constType, const double grid_size, const string region, const bool doSoftKill);
   MomKey                        MakePrunedJets(const MomKey JetType, const fastjet::JetAlgorithm algo, const double zcut, const double dcut);
   MomKey                        MakePrunedJetsName(const MomKey JetType, const fastjet::JetAlgorithm algo, const double zcut, const double dcut);
   void                          RemoveJetsPtCut(const MomKey JetType, float PtCut);

@@ -22,7 +22,7 @@ void runGrid(TString outDS, TString extraFlags = "--nGBPerJob=10", bool noSubmit
 	gSystem->Exec(tarString);
 	gSystem->Unlink("libProofAna.par");
 
-	TString baseCommand = "prun --rootVer=\"5.34.07\" --cmtConfig=\"x86_64-slc5-gcc43-opt\" --inTarBall=";
+	TString baseCommand = "prun --rootVer=\"5.34.19\" --cmtConfig=\"x86_64-slc5-gcc43-opt\" --inTarBall=";
 	baseCommand += outDS;
 	baseCommand += ".tar.gz --bexec \"tar -xvzf libProofAna.par; rm libProofAna.par; mkdir libProofAna/run; mv options.root libProofAna/run; mv libProofAna/scripts/runGridRuntime.C libProofAna/run; cd libProofAna; make solib\" --exec \"cd libProofAna; cd run; echo %IN > input.txt; root -l -b -q 'runGridRuntime.C(";
   baseCommand += copies;

@@ -1,12 +1,13 @@
 #include "../scripts/runLocal.C"
 #include "../scripts/runProof.C"
+#include "../scripts/runGrid.C"
 #include "../scripts/helperFunc.C"
 #include "../scripts/helperJetMETCommon.C"
 #include "../scripts/loadLibraries.C"
 #include <TFile.h>
 #include <TString.h>
 
-void runSimple(TString mode       = "local",                // local, lite, or cluster
+void runSimple(TString mode       = "grid",                // local, lite, or cluster
 	       TString identifier = "SimpleRun6",               // tag 
 	       TString dataset      = "test_Indiana_gFEX.forwardnew",  // dataset name
 	       TString username   = "caj24",                 // username (e.g. swiatlow, fizisist)
@@ -65,7 +66,7 @@ void runSimple(TString mode       = "local",                // local, lite, or c
         path = pathLite;
     }
     else if(mode.CompareTo("cluster")==0) {
-        url = TString(username+"@atlprf01.slac.stanford.edu");
+        url = TString(username+"@bolt.physics.indiana.edu");
         path = pathCluster;
     }
     
@@ -154,6 +155,7 @@ void runSimple(TString mode       = "local",                // local, lite, or c
     confProofAna->Set("DATASET"        , dataset      );
     confProofAna->Set("OUTPUTPATH"     , path         );
     confProofAna->Set("EVENTBUILDER"   , eventbuilder );
+	confProofAna->Set("TREENAME"	   , treename );
     //if (!doHists) 
       confProofAna->Set("MERGE",true);     // enable dataset mode
    
@@ -165,6 +167,7 @@ void runSimple(TString mode       = "local",                // local, lite, or c
     ReadDatasetInfo(dataset  , confProofAna  ); 
     //WriteGroomedPRWO(options , "EF_j240_a4tc_EFFS" );
     confProofAna->Write();
+	options->Write();
     options->Close();
     delete options;
  
@@ -172,9 +175,10 @@ void runSimple(TString mode       = "local",                // local, lite, or c
     cout << "All setup, ready to go " << endl; 
     int runNevents=10000; 
  
-
+    TString outDS = "user.cjohnson.test_dijet.SoftKiller-12-01-15";
     // Decide to run local or on the cluster
     if(mode.CompareTo("local")==0) runLocal(dataset,treename);
+	else if(mode.CompareTo("grid")==0) runGrid(outDS);
     else{
         runProof(url,dataset,nWorkers,treename);
     }

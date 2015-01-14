@@ -1893,7 +1893,7 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   
   //fastjet::Selector sel_jets = fastjet::SelectorNHardest(2) * fastjet::SelectorAbsRapMax(3.0);
   //vector<fastjet::PseudoJet> full_jets = sel_jets(clust_seq_full.inclusive_jets());
-  vector<fastjet::PseudoJet> full_jets = sorted_by_pt(clust_seq_full.inclusive_jets(10.));  
+  vector<fastjet::PseudoJet> full_jets = sorted_by_pt(clust_seq_full.inclusive_jets(30.));  
 
   //fastjet::JetDefinition subjet_def_A(fastjet::kt_algorithm, 0.3);
   //fastjet::contrib::JetCleanser jvf_cleanser_A(subjet_def_A, fastjet::contrib::JetCleanser::jvf_cleansing, fastjet::contrib::JetCleanser::input_nc_together);
@@ -1903,7 +1903,7 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   // Then cluster the resulting event
   //----------------------------------------------------------
   //double grid_size = 0.4;
-  fastjet::contrib::SoftKiller killer(2., 0.4);
+  fastjet::contrib::SoftKiller killer(rapMax, grid_size);
   //fastjet::contrib::SoftKiller *  killer = new fastjet::contrib::SoftKiller(2., 0.4);
   if(Debug()) cout << "Above here" << endl;
   
@@ -1915,7 +1915,7 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   fastjet::ClusterSequence clust_seq_kill(soft_killed_event, jetDef);  
 
   //vector<fastjet::PseudoJet> kill_jets = sel_jets(clust_seq_kill.inclusive_jets());
-  vector<fastjet::PseudoJet> kill_jets = sorted_by_pt(clust_seq_kill.inclusive_jets(10.));
+  vector<fastjet::PseudoJet> kill_jets = sorted_by_pt(clust_seq_kill.inclusive_jets(30.));
 
 //  cout << setprecision(4);
 //  cout << "Soft Killer applied a pt threshold of " << pt_threshold << endl;
@@ -1963,7 +1963,7 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   	key+="softKill";
   }
 
-  if(Debug()) cout << "MakeJets with key " << key << endl;
+  if(Debug()) cout << "MakeSKJets with key " << key << endl;
 
   MomKey FinalKey(key);
   MomKey FFinalKey = SJetKey + FinalKey;
@@ -1992,6 +1992,108 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   }// end loop over jets
 
   return FinalKey;
+}
+
+//Do the SoftKiller PileUp subtraction
+MomKey Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_size, const int region, const bool doSoftKill){
+  
+  //if(Debug()) cout << "Initializing Event for SoftKiller" << endl;
+  const static MomKey SKrhoKey("rho");
+  vector<fastjet::PseudoJet> fullEvent = ObjsToPJ(constType);
+  
+  double rapMax;
+  double rapMin;
+  switch (region) {
+	  case 0:
+	    rapMax = 5.0;
+		rapMin = -5.0;
+		break;
+	  case 1:
+		rapMax = 1.6;
+		rapMin = 0.0;
+		break;
+	  case 2:
+		rapMax = 0.0;
+		rapMin = -1.6;
+		break;
+	  case 3:
+		rapMax = 1.6;
+		rapMin = 5.0;
+		break;
+	  case 4:
+		rapMax = -1.6;
+		rapMin = -5.0;
+		break;
+  }
+  
+  fullEvent = fastjet::SelectorRapRange(rapMin,rapMax)(fullEvent);
+
+  fastjet::contrib::SoftKiller killer(rapMin, rapMax, grid_size, grid_size);
+    
+  double pt_threshold;
+  vector<fastjet::PseudoJet> soft_killed_event;
+  killer.apply(fullEvent, soft_killed_event, pt_threshold);
+  cout << "pT Threshold from SoftKiller: " << pt_threshold << endl;
+
+  TString key;
+
+  key+= TString::Format("%d",region);
+  key+= TString::Format("%.0f",10.*grid_size);
+
+  const static MomKey LCKey("clustersLCTopo");
+  const static MomKey TrackKey("tracksgood");
+  const static MomKey TruthKey("truthsStable");
+  const static MomKey CaloTowKey("calotowers");
+
+  if(constType==LCKey){
+  	key+="LCTopo";
+  } else if (constType==TrackKey){
+  	key+="TrackZ";
+  } else if(constType==TruthKey){
+    key+="Truth";
+  } else if(constType==CaloTowKey){
+	key+="CaloTow";
+  }
+  if(doSoftKill){
+  	key+="softKill";
+  } else {
+	key+="fullEvnt";
+  }
+
+  MomKey FinalKey(key);
+  MomKey FFinalKey = SKrhoKey + FinalKey;
+
+  AddVec(SKrhoKey+FinalKey);
+
+  // vector<fastjet::PseudoJet> ourTowers;
+  // if(doSoftKill){
+  // 	ourTowers = soft_killed_event;
+  // } else{
+  // 	ourTowers = fullEvent;
+  // }
+
+  pair <double, double> rho_pair;
+  double ptSum = 0.0;
+  for(unsigned int iTower = 0 ; iTower < fullEvent.size() ; iTower++){
+  	fastjet::PseudoJet tower = fullEvent[iTower];
+	ptSum+=tower.pt()/(grid_size*grid_size);
+  	//vector<fastjet::PseudoJet> constituents = tower.constituents();
+  	//Particle* towerP = new Particle();
+  	//towerP->p.SetPtEtaPhiE(tower.pt(), tower.eta(), tower.phi(), tower.e());
+  	//static const MomKey ConsKey("constituents");
+  	//towerP->AddVec(ConsKey);
+  	//for(unsigned int iCons = 0; iCons < constituents.size(); iCons++){
+  	//	const PJ_Info* info = &(constituents[iCons].user_info<PJ_Info>());
+  	//	jetP->Add(ConsKey, info->Pointer);
+  	//} // end loop over cons
+  	//Add(FFinalKey, event);
+  }// end loop over jets
+  double rhoMean = ptSum/fullEvent.size();
+  //Add(FFinalKey, rho);
+
+  //return FinalKey;
+  rho_pair = make_pair(rhoMean, SKrho)
+  return rho_pair
 }
 
 ///=========================================

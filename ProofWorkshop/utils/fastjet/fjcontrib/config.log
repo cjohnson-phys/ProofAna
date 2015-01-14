@@ -1,21 +1,10 @@
-This file was created by the fastjet contrib configure on Thu Dec 18 16:03:10 EST 2014
+This file was created by the fastjet contrib configure on Fri Dec 19 15:41:17 MST 2014
 
 The command line invocation was
 
-    ./configure CXXFLAGS=-O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.05-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE  LDFLAGS=-O2 -m64 FC=gfortran FCFLAGS=-O2 -fPIC --fastjet-config=/sx/caj24/testarea/ProofAna/utils/fastjet/fastjet-config --prefix=/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
+    ./configure CXXFLAGS=-O2 -pipe -Wall -W -Woverloaded-virtual -pthread -stdlib=libc++ -std=c++11 -m64 -I/Users/Alex/Desktop/HEP/ROOT6/include -Qunused-arguments -DJETEDM_STANDALONE  LDFLAGS=-O2 -mmacosx-version-min=10.10 -m64 FC=gfortran FCFLAGS=-O2 -fPIC --fastjet-config=/Users/Alex/Desktop/ProofAna/utils/fastjet/fastjet-config --prefix=/Users/Alex/Desktop/ProofAna/utils/fastjet/install-dir
 
-        ConstituentSubtractor  v1.0.0
-        EnergyCorrelator       v1.1.0
-        GenericSubtractor      v1.2.0
-        JetCleanser            v1.0.1
-        JetFFMoments           v1.0.0
-        JetsWithoutJets        v1.0.0
-        Nsubjettiness          v2.1.0
-        RecursiveTools         v1.0.0
-        ScJet                  v1.1.0
         SoftKiller             v1.0.0
-        SubjetCounting         v1.0.1
-        VariableR              v1.1.1
 
-Installation prefix: /sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
+Installation prefix: /Users/Alex/Desktop/ProofAna/utils/fastjet/install-dir
 
