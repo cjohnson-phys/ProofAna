@@ -2007,11 +2007,11 @@ pair<double,double> Analysis_JetMET_Base::GetSKrho(const MomKey constType, const
   const static MomKey SKrhoKey("rho");
   vector<fastjet::PseudoJet> fullEvent = ObjsToPJ(constType);
   
-  double rapMax;
-  double rapMin;
+  double rapMax = 5.0;
+  double rapMin = -5.0;
   switch (region) {
 	  case 0:
-                rapMax = 3.2;
+        rapMax = 3.2;
 		rapMin = -3.2;
 		break;
 	  case 1:
@@ -2082,7 +2082,7 @@ pair<double,double> Analysis_JetMET_Base::GetSKrho(const MomKey constType, const
   double ptSum = 0.0;
   for(unsigned int iTower = 0 ; iTower < ourTowers.size() ; iTower++){
   	fastjet::PseudoJet tower = ourTowers[iTower];
-	ptSum+=tower.pt()/(grid_size*grid_size);
+	ptSum+=tower.pt();
   	//vector<fastjet::PseudoJet> constituents = tower.constituents();
   	//Particle* towerP = new Particle();
   	//towerP->p.SetPtEtaPhiE(tower.pt(), tower.eta(), tower.phi(), tower.e());
