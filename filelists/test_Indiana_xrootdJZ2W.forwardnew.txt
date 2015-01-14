@@ -1,0 +1,10 @@
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_0.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_1.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_2.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_3.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_4.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_5.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_6.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_7.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_8.root
+/xrootd/atlas/luehring/LArStudies_new/PileupSkim_Pythia8_AU2CT10_jetjet_JZ2W_9.root

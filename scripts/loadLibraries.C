@@ -5,7 +5,7 @@ gSystem->AddLinkedLibs("-D__USE_XOPEN2K8");
 	if(!gSystem->Getenv("PROOFANADIR")) gSystem->Setenv("PROOFANADIR","..");
  gSystem->AddDynamicPath("./lib");
 	gSystem->AddDynamicPath(gSystem->Getenv("PROOFANADIR"));
-	TString pwd(gSystem->WorkingDirectory()); gSystem->ChangeDirectory(gSystem->Getenv("PROOFANADIR")); gSystem->Exec("sh utils/RootCore/RootCore_relink.sh"); gSystem->CompileMacro("utils/RootCore/scripts/load_packages.C","k"); gSystem->CompileMacro("utils/RootCore/RootCore_load.C","k"); RootCore_load(); load_packages(); gSystem->ChangeDirectory(pwd); if (gSystem->Load("lib/libTriggerMenuNtuple.so") == -1) return -1;	 if (gSystem->Load("lib/libFastjet.so") == -1) return -1; if (gSystem->Load("lib/libFastjetPlugins.so") == -1) return -1;	 if (gSystem->Load("lib/libFastjetTools.so") == -1) return -1;	 if (gSystem->Load("lib/libNSub.so") == -1) return -1;
+	if (gSystem->Load("lib/libFastjet.so") == -1) return -1; if (gSystem->Load("lib/libFastjetPlugins.so") == -1) return -1;	 if (gSystem->Load("lib/libFastjetTools.so") == -1) return -1;	 if (gSystem->Load("lib/libNSub.so") == -1) return -1; TString pwd(gSystem->WorkingDirectory()); gSystem->ChangeDirectory(gSystem->Getenv("PROOFANADIR")); gSystem->Exec("olddir=\`head -16 utils/RootCore/scripts/setup.sh | tail -1 | awk -F\"=\" '{print $2}'\`; sed -ie \"s?$olddir?$PWD/utils/RootCore?\" utils/RootCore/scripts/setup.sh"); gSystem->CompileMacro("utils/RootCore/scripts/load_packages.C","k"); gSystem->CompileMacro("utils/RootCore/RootCore_load.C","k"); RootCore_load(); load_packages(); gSystem->ChangeDirectory(pwd); if (gSystem->Load("lib/libTriggerMenuNtuple.so") == -1) return -1;	
 	if (gSystem->Load("lib/libProofAna.so") == -1) return -1;
 	return 0;
 }

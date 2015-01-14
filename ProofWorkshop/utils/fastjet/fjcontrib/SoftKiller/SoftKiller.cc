@@ -42,7 +42,6 @@ SoftKiller::SoftKiller(double rapmax, double cell_size,
   _ymax(rapmax), _ymin(-rapmax), 
   _requested_drap(cell_size), _requested_dphi(cell_size),
   _sifter(sifter) {
-    cout << "Inside constructor" << endl;
     _setup_grid();
 }
 #endif

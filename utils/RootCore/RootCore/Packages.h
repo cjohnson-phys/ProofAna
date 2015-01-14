@@ -12,12 +12,12 @@
 #define ROOTCORE_PACKAGE_JetResolution
 #define ROOTCORE_PACKAGE_ApplyJetResolutionSmearing
 #define ROOTCORE_PACKAGE_CalibrationDataInterface
+#define ROOTCORE_PACKAGE_egammaAnalysisUtils
 #define ROOTCORE_PACKAGE_GoodRunsLists
 #define ROOTCORE_PACKAGE_ObjectSelectorCore
 #define ROOTCORE_PACKAGE_JetSelectorTools
 #define ROOTCORE_PACKAGE_JetUncertainties
 #define ROOTCORE_PACKAGE_MuonMomentumCorrections
-#define ROOTCORE_PACKAGE_egammaAnalysisUtils
 #define ROOTCORE_PACKAGE_MissingETUtility
 #define ROOTCORE_PACKAGE_PATCore
 #define ROOTCORE_PACKAGE_PileupReweighting

@@ -1,0 +1,16 @@
+ApplyJetCalibration
+JetResolution
+ApplyJetResolutionSmearing
+CalibrationDataInterface
+egammaAnalysisUtils
+GoodRunsLists
+ObjectSelectorCore
+JetSelectorTools
+JetUncertainties
+MuonMomentumCorrections
+MissingETUtility
+PATCore
+PileupReweighting
+ReweightUtils
+TileTripReader
+TrigRootAnalysis

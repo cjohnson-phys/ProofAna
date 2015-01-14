@@ -7,12 +7,14 @@
 #include <TFile.h>
 #include <TString.h>
 
-void runSimple(TString mode       = "grid",                // local, lite, or cluster
+void runSimple(TString mode       = "local",                // local, lite, cluster, or grid
 	       TString identifier = "SimpleRun6",               // tag 
-	       TString dataset      = "test_Indiana_gFEX.forwardnew",  // dataset name
+//	       TString dataset      = "test_14TeVDijet.forwardnew",  // dataset name
+//               TString dataset    = "test_Indiana_gFEX14TeV.forwardnew",
+               TString dataset    = "test_Indiana_xrootdJZ1W.forwardnew",
 	       TString username   = "caj24",                 // username (e.g. swiatlow, fizisist)
 	       bool mcweights     = false,                       // use mc weights?
-	       bool debug         = true, // debug mode
+	       bool debug         = false, // debug mode
 	       int nWorkers = 4
 	       ) 
 { 
@@ -54,7 +56,7 @@ void runSimple(TString mode       = "grid",                // local, lite, or cl
     else
       treename = "qcd";
       
-    treename = "physics";
+    treename = "mytree";
  
     ///----------------------------------------------------------------
     /// Filename paths, URLs for PROOF running
@@ -155,7 +157,7 @@ void runSimple(TString mode       = "grid",                // local, lite, or cl
     confProofAna->Set("DATASET"        , dataset      );
     confProofAna->Set("OUTPUTPATH"     , path         );
     confProofAna->Set("EVENTBUILDER"   , eventbuilder );
-	confProofAna->Set("TREENAME"	   , treename );
+    confProofAna->Set("TREENAME"       , treename );
     //if (!doHists) 
       confProofAna->Set("MERGE",true);     // enable dataset mode
    
@@ -167,18 +169,19 @@ void runSimple(TString mode       = "grid",                // local, lite, or cl
     ReadDatasetInfo(dataset  , confProofAna  ); 
     //WriteGroomedPRWO(options , "EF_j240_a4tc_EFFS" );
     confProofAna->Write();
-	options->Write();
+    options->Write();
     options->Close();
-    delete options;
+    //delete options;
  
  
     cout << "All setup, ready to go " << endl; 
     int runNevents=10000; 
  
-    TString outDS = "user.cjohnson.test_dijet.SoftKiller-12-01-15";
+    TString outDS = "user.cjohnson.test_14TeVdijet.SoftKiller-12-01-15.v3";
+    TString Flags = "--nFilesPerJob=50"; //Flags = "--nGBPerJob=10 --allowTaskDuplication";
     // Decide to run local or on the cluster
     if(mode.CompareTo("local")==0) runLocal(dataset,treename);
-	else if(mode.CompareTo("grid")==0) runGrid(outDS);
+    else if(mode.CompareTo("grid")==0) runGrid(outDS, extraFlags=Flags);
     else{
         runProof(url,dataset,nWorkers,treename);
     }

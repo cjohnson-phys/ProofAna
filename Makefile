@@ -207,7 +207,7 @@ $(LIBFILE): $(OLIST) $(OUTPUTDIR)/packages.lock
 	@echo "Linking $(LIBFILE)"
 	@mkdir -p $(OUTPUTDIR)
 	@rm -f $(LIBFILE)
-	@$(LD) $(CXXFLAGS) $(SOFLAGS) $(LINKLIBS) $(EXTRALDFLAGS) $(OLIST) -o $(LIBFILE)
+	@$(LD) $(CXXFLAGS) $(SOFLAGS) $(OLIST) $(LINKLIBS) $(EXTRALDFLAGS) -o $(LIBFILE)
 
 # Rule to create PAR file
 $(PARFILE): $(DEPS) $(CXXLIST) $(HLIST) $(LDEFFILE) $(LIBFILE)

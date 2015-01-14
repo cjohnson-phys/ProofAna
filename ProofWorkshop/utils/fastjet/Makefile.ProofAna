@@ -10,7 +10,7 @@ INCLUDES += -Iutils/fastjet/plugins/FlavKt
 FASTJETFILE := $(OUTPUTDIR)/libFastjet.so
 FASTJETPLUGINFILE := $(OUTPUTDIR)/libFastjetPlugins.so
 FASTJETTOOLSFILE := $(OUTPUTDIR)/libFastjetTools.so
-#FASTJETCONTRIBJETCLEANSERFILE := $(OUTPUTDIR)/libJetCleanser.a
+FASTJETCONTRIBJETCLEANSERFILE := $(OUTPUTDIR)/libJetCleanser.a
 #FASTJETCONTRIBNSUBJETTINESSFILE:= $(OUTPUTDIR)/libNsubjettiness.a
 FASTJETCONTRIBSOFTKILLERFILE := $(OUTPUTDIR)/libSoftKiller.a
 
@@ -45,14 +45,14 @@ ifeq ($(PLATFORM),macosx)
 	@ln -sf ../utils/fastjet/install-dir/lib/libfastjet.dylib $(FASTJETFILE)
 	@ln -sf ../utils/fastjet/install-dir/lib/libfastjetplugins.dylib $(FASTJETPLUGINFILE)
 	@ln -sf ../utils/fastjet/install-dir/lib/libfastjettools.dylib $(FASTJETTOOLSFILE)
-#	@ln -sf ../utils/fastjet/install-dir/lib/libJetCleanser.a $(FASTJETCONTRIBJETCLEANSERFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libJetCleanser.a $(FASTJETCONTRIBJETCLEANSERFILE)
 #	@ln -sf ../utils/fastjet/install-dir/lib/libNsubjettiness.a $(FASTJETCONTRIBNSUBJETTINESSFILE)
 	@ln -sf ../utils/fastjet/install-dir/lib/libSoftKiller.a $(FASTJETCONTRIBSOFTKILLERFILE)
 else
 	@ln -sf ../utils/fastjet/install-dir/lib/libfastjet.so $(FASTJETFILE)
 	@ln -sf ../utils/fastjet/install-dir/lib/libfastjetplugins.so $(FASTJETPLUGINFILE)
 	@ln -sf ../utils/fastjet/install-dir/lib/libfastjettools.so $(FASTJETTOOLSFILE)
-#	@ln -sf ../utils/fastjet/install-dir/lib/libJetCleanser.a $(FASTJETCONTRIBJETCLEANSERFILE)
+	@ln -sf ../utils/fastjet/install-dir/lib/libJetCleanser.a $(FASTJETCONTRIBJETCLEANSERFILE)
 #	@ln -sf ../utils/fastjet/install-dir/lib/libNsubjettiness.a $(FASTJETCONTRIBNSUBJETTINESSFILE)
 	@ln -sf	../utils/fastjet/install-dir/lib/libSoftKiller.a $(FASTJETCONTRIBSOFTKILLERFILE)
 endif

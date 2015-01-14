@@ -1895,16 +1895,12 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   //vector<fastjet::PseudoJet> full_jets = sel_jets(clust_seq_full.inclusive_jets());
   vector<fastjet::PseudoJet> full_jets = sorted_by_pt(clust_seq_full.inclusive_jets(30.));  
 
-  //fastjet::JetDefinition subjet_def_A(fastjet::kt_algorithm, 0.3);
-  //fastjet::contrib::JetCleanser jvf_cleanser_A(subjet_def_A, fastjet::contrib::JetCleanser::jvf_cleansing, fastjet::contrib::JetCleanser::input_nc_together);
-
    if(Debug()) cout << "Applying  SoftKiller" << endl;
   // now apply the soft killerto the full event
   // Then cluster the resulting event
   //----------------------------------------------------------
   //double grid_size = 0.4;
   fastjet::contrib::SoftKiller killer(rapMax, grid_size);
-  //fastjet::contrib::SoftKiller *  killer = new fastjet::contrib::SoftKiller(2., 0.4);
   if(Debug()) cout << "Above here" << endl;
   
   double pt_threshold;
@@ -1961,9 +1957,19 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   }
   if(doSoftKill){
   	key+="softKill";
+  } else{
+        key+="fullJet";
   }
 
-  if(Debug()) cout << "MakeSKJets with key " << key << endl;
+  //Add function to append key with rapMax and grid_size
+  std::ostringstream sRapMax;
+  sRapMax << "rap" << rapMax;
+  key+=sRapMax.str();
+  std::ostringstream sGrid_size;
+  sGrid_size << "grid" << grid_size;
+  key+=sGrid_size.str();
+
+  if(Debug()) cout << "MakeJets with key " << key << endl;
 
   MomKey FinalKey(key);
   MomKey FFinalKey = SJetKey + FinalKey;
@@ -1995,7 +2001,7 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
 }
 
 //Do the SoftKiller PileUp subtraction
-MomKey Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_size, const int region, const bool doSoftKill){
+pair<double,double> Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_size, const int region, const bool doSoftKill){
   
   //if(Debug()) cout << "Initializing Event for SoftKiller" << endl;
   const static MomKey SKrhoKey("rho");
@@ -2005,8 +2011,8 @@ MomKey Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_
   double rapMin;
   switch (region) {
 	  case 0:
-	    rapMax = 5.0;
-		rapMin = -5.0;
+                rapMax = 3.2;
+		rapMin = -3.2;
 		break;
 	  case 1:
 		rapMax = 1.6;
@@ -2017,12 +2023,12 @@ MomKey Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_
 		rapMin = -1.6;
 		break;
 	  case 3:
-		rapMax = 1.6;
-		rapMin = 5.0;
+		rapMax = 3.2;
+		rapMin = 1.6;
 		break;
 	  case 4:
 		rapMax = -1.6;
-		rapMin = -5.0;
+		rapMin = -3.2;
 		break;
   }
   
@@ -2033,7 +2039,7 @@ MomKey Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_
   double pt_threshold;
   vector<fastjet::PseudoJet> soft_killed_event;
   killer.apply(fullEvent, soft_killed_event, pt_threshold);
-  cout << "pT Threshold from SoftKiller: " << pt_threshold << endl;
+  cout << "pT Threshold from SoftKiller: " << pt_threshold << " in region " << region <<  endl;
 
   TString key;
 
@@ -2065,17 +2071,17 @@ MomKey Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_
 
   AddVec(SKrhoKey+FinalKey);
 
-  // vector<fastjet::PseudoJet> ourTowers;
-  // if(doSoftKill){
-  // 	ourTowers = soft_killed_event;
-  // } else{
-  // 	ourTowers = fullEvent;
-  // }
+  vector<fastjet::PseudoJet> ourTowers;
+  if(doSoftKill){
+  	ourTowers = soft_killed_event;
+  } else{
+  	ourTowers = fullEvent;
+  }
 
   pair <double, double> rho_pair;
   double ptSum = 0.0;
-  for(unsigned int iTower = 0 ; iTower < fullEvent.size() ; iTower++){
-  	fastjet::PseudoJet tower = fullEvent[iTower];
+  for(unsigned int iTower = 0 ; iTower < ourTowers.size() ; iTower++){
+  	fastjet::PseudoJet tower = ourTowers[iTower];
 	ptSum+=tower.pt()/(grid_size*grid_size);
   	//vector<fastjet::PseudoJet> constituents = tower.constituents();
   	//Particle* towerP = new Particle();
@@ -2088,12 +2094,12 @@ MomKey Analysis_JetMET_Base::GetSKrho(const MomKey constType, const double grid_
   	//} // end loop over cons
   	//Add(FFinalKey, event);
   }// end loop over jets
-  double rhoMean = ptSum/fullEvent.size();
+  double rhoMean = ptSum/ourTowers.size();
   //Add(FFinalKey, rho);
-
+  
+  rho_pair = make_pair(rhoMean, pt_threshold);
+  return rho_pair;
   //return FinalKey;
-  rho_pair = make_pair(rhoMean, SKrho)
-  return rho_pair
 }
 
 ///=========================================

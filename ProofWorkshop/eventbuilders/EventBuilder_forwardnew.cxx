@@ -254,9 +254,9 @@ Bool_t EventBuilder_forwardnew::CopyEvent(AnalysisBase* evt)
 	
 	if(fEvt->Debug()) cout << fEvt->RunNumber() << " is run number  and " << fEvt->EventNumber() << "is enum" << endl;
 	
-	evt->Set("larerror", Get<unsigned int>("larError")); 
-  evt->Set("tileerror", Get<unsigned int>("tileError")); 
-  evt->Set("coreflags", Get<unsigned int>("coreFlags")); 
+//	evt->Set("larerror", Get<unsigned int>("larError")); 
+//  evt->Set("tileerror", Get<unsigned int>("tileError")); 
+//  evt->Set("coreflags", Get<unsigned int>("coreFlags")); 
   //evt->Set("isMC",(bool)(Get<UInt_t>("RunNumber")<152166));
 	evt->Set("averageIntPerXing", Get<float>("averageIntPerXing"));
   evt->Set("Eventshape_rhoKt4LC", Get<float>("Eventshape_rhoKt4LC"));
@@ -759,24 +759,40 @@ Bool_t EventBuilder_forwardnew::CopyClusters(){
 Bool_t EventBuilder_forwardnew::CopyTowers(){
   if(fEvt->Debug()) cout << "set up towers" << endl;
   if(doTowers){
-    static const MomKey calotowersKey("calotowers");
-    static const MomKey topotowersKey("topotowers");
+//    static const MomKey calotowersKey("calotowers");
+//    static const MomKey topotowersKey("topotowers");
+    static const MomKey calotowersKey("jTowers");
+    static const MomKey topotowersKey("gTowers");
     fEvt->AddVec(calotowersKey);
     fEvt->AddVec(topotowersKey);
 
+//    // calo towers: simple projections, no noise supression
+//    static const BranchKey cato_n  ("calo_n");
+//    static const BranchKey cato_pt ("calo_tower_pT");
+//    static const BranchKey cato_eta("calo_tower_eta");
+//    static const BranchKey cato_phi("calo_tower_phi");
+//    static const BranchKey cato_E  ("calo_tower_E");
+//
+//    // topo towers: only cells in topo clusters, projected in towers, i.e. with noise suppression
+//    static const BranchKey toto_n  ("topo_n");
+//    static const BranchKey toto_pt ("topo_tower_pT");
+//    static const BranchKey toto_eta("topo_tower_eta");
+//    static const BranchKey toto_phi("topo_tower_phi");
+//    static const BranchKey toto_E  ("topo_tower_E");
+
     // calo towers: simple projections, no noise supression
-    static const BranchKey cato_n  ("calo_n");
-    static const BranchKey cato_pt ("calo_tower_pT");
-    static const BranchKey cato_eta("calo_tower_eta");
-    static const BranchKey cato_phi("calo_tower_phi");
-    static const BranchKey cato_E  ("calo_tower_E");
+    static const BranchKey cato_n  ("jTowerN");
+    static const BranchKey cato_pt ("jTowerEt");
+    static const BranchKey cato_eta("jTowerEta");
+    static const BranchKey cato_phi("jTowerPhi");
+    static const BranchKey cato_E  ("jTowerE");
 
     // topo towers: only cells in topo clusters, projected in towers, i.e. with noise suppression
-    static const BranchKey toto_n  ("topo_n");
-    static const BranchKey toto_pt ("topo_tower_pT");
-    static const BranchKey toto_eta("topo_tower_eta");
-    static const BranchKey toto_phi("topo_tower_phi");
-    static const BranchKey toto_E  ("topo_tower_E");
+    static const BranchKey toto_n  ("gTowerN");
+    static const BranchKey toto_pt ("gTowerEt");
+    static const BranchKey toto_eta("gTowerEta");
+    static const BranchKey toto_phi("gTowerPhi");
+    static const BranchKey toto_E  ("gTowerE");
 
     int ncalotowers   = Get<int>(cato_n);
 //    cout << "number of calo towers: " << ncalotowers << endl;

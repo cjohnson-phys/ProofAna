@@ -60,17 +60,69 @@ bool Analysis_SimpleExample::ProcessEvent()
 
   if(Debug()) cout << "Making jets and jet Plots!" << endl;
 
-  //MomKey myJets = MakeJets(fastjet::antikt_algorithm, 0.3, "clustersLCTopo","extra");
-  //MomKey myJets = MakeJets(fastjet::antikt_algorithm, 0.4, "calotowers");     
-  MomKey myJets = MakeSKJets(fastjet::antikt_algorithm, 0.4, "calotowers", 5.0, 0.4, true);
+  for (int iGrid=4; iGrid<5; ++iGrid) {
 
+  double grid_size = 0.1*iGrid;
+  double area = grid_size*grid_size;
+  double jetR = 1.0;  //Also try largeR = 1.0
 
-  if(jets(myJets)){
-    Fill("lead_jet_pt", jet(0,myJets).p.Perp(), Weight(), 100, 0, 2000); 
+  MomKey SKJets = MakeSKJets(fastjet::antikt_algorithm, jetR, "jTowers", 5.0, grid_size, true);
+  MomKey fullJets = MakeSKJets(fastjet::antikt_algorithm, jetR, "jTowers", 5.0, grid_size, false);
+
+  //GetSKrho returns pair <rhoMean, SKrho>: rhoMean is before SK if false, rhoMean is after SK if true
+  if(jets(SKJets)){
+    cout << jets(SKJets) << endl;
+    TString gridKey = "_grid";
+    gridKey += TString::Format("%.0i",iGrid);
+
+    Fill("lead_jet_pt_SoftKill"+gridKey, jet(0,SKJets).p.Perp(), Weight(), 100, 0, 2000); 
+    Fill("lead_jet_pt_Full"+gridKey, jet(0,fullJets).p.Perp(), Weight(), 100, 0, 2000);
+    Fill("lead_jet_pt_diff"+gridKey, jet(0,SKJets).p.Perp()-jet(0,fullJets).p.Perp(), Weight(), 100, -25, 25);
+
+    //rho -5 to 5, before and after SK, region 0
+    pair<double,double> rhoAll_pair = GetSKrho("jTowers", grid_size, 0, false);
+    pair<double,double> SKrhoAll_pair = GetSKrho("jTowers", grid_size, 0, true);
+    Fill("Mean_rho_all"+gridKey,rhoAll_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("Mean_rho_all_SK"+gridKey,SKrhoAll_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("SoftKill_rho_all"+gridKey,SKrhoAll_pair.second/area,Weight(),1000,0.0,100.);
+
+    //rho 0 to 1.6, before and after SK, region 1
+    pair<double,double> rhoOne_pair = GetSKrho("jTowers", grid_size, 1, false);
+    pair<double,double> SKrhoOne_pair = GetSKrho("jTowers", grid_size, 1, true);
+    Fill("Mean_rho_1"+gridKey,rhoOne_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("Mean_rho_1_SK"+gridKey,SKrhoOne_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("SoftKill_rho_1"+gridKey,SKrhoOne_pair.second/area,Weight(),1000,0.0,100.);
+
+    //rho -1.6 to 0, before and after SK, region 2
+    pair<double,double> rhoTwo_pair = GetSKrho("jTowers", grid_size, 2, false);
+    pair<double,double> SKrhoTwo_pair = GetSKrho("jTowers", grid_size, 2, true);
+    Fill("Mean_rho_2"+gridKey,rhoTwo_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("Mean_rho_2_SK"+gridKey,SKrhoTwo_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("SoftKill_rho_2"+gridKey,SKrhoTwo_pair.second/area,Weight(),1000,0.0,100.);
+
+    //rho 1.6 to 5, before and after SK, region 3
+    pair<double,double> rhoThree_pair = GetSKrho("jTowers", grid_size, 3, false);
+    pair<double,double> SKrhoThree_pair = GetSKrho("jTowers", grid_size, 3, true);
+    Fill("Mean_rho_3"+gridKey,rhoThree_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("Mean_rho_3_SK"+gridKey,SKrhoThree_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("SoftKill_rho_3"+gridKey,SKrhoThree_pair.second/area,Weight(),1000,0.0,100.);
+
+    //rho -5 to -1.6, before and after SK, region 4
+    pair<double,double> rhoFour_pair = GetSKrho("jTowers", grid_size, 4, false);
+    pair<double,double> SKrhoFour_pair = GetSKrho("jTowers", grid_size, 4, true);
+    Fill("Mean_rho_4"+gridKey,rhoFour_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("Mean_rho_4_SK"+gridKey,SKrhoFour_pair.first/area,Weight(),1000,0.0,100.);
+    Fill("SoftKill_rho_4"+gridKey,SKrhoFour_pair.second/area,Weight(),1000,0.0,100.);
+
+    //compare rho 0 to 1.6 to rho -5to5, before and after SK
+    Fill("Mean_rho1_vs_rhoAll"+gridKey,rhoOne_pair.first/area,rhoAll_pair.first/area,Weight(),1000,0.0,100.,1000,0.0,100.);
+    Fill("Mean_rho1_vs_rhoAll_SK"+gridKey,SKrhoOne_pair.first/area,SKrhoAll_pair.first/area,Weight(),1000,0.0,100.,1000,0.0,100.);
+    Fill("Median_rho1_vs_rhoAll_SK"+gridKey,SKrhoOne_pair.second/area,SKrhoAll_pair.second/area,Weight(),1000,0.0,100.,1000,0.0,100.);
   }
   else{
     cout << "There are no jets in event." << endl;
   }
+}
 
   return true;
   AddGoodTracks();

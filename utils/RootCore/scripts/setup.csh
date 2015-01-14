@@ -7,11 +7,11 @@ endif
 
 test "x$ROOTSYS" != "x/Users/Alex/Desktop/HEP/ROOT6" && echo ROOTSYS=$ROOTSYS not /Users/Alex/Desktop/HEP/ROOT6 && echo please set up correct root version or follow the instructions at && echo \ \ https://twiki.cern.ch/twiki/bin/viewauth/Atlas/RootCore#If_Something_Goes_Wrong && return 1
 
-setenv ROOTCOREDIR /Users/Alex/Desktop/ProofAna/utils/RootCore
+setenv ROOTCOREDIR /Users/Alex/Desktop/HEP/gFEX/ProofAna/utils/RootCore
 if $?ROOTCOREBIN then
     true
 else
-    setenv ROOTCOREBIN /Users/Alex/Desktop/ProofAna/utils/RootCore
+    setenv ROOTCOREBIN /Users/Alex/Desktop/HEP/gFEX/ProofAna/utils/RootCore
 endif
 test \! -d "$ROOTCOREBIN" && echo output directory not found, please create it && echo "  mkdir $ROOTCOREBIN" && return 1
 

@@ -5,19 +5,19 @@
 # It is necessary for linking the library.
 
 # The name that we can dlopen(3).
-dlname='libfastjettools.0.dylib'
+dlname='libfastjettools.so.0'
 
 # Names of this library.
-library_names='libfastjettools.0.dylib libfastjettools.dylib'
+library_names='libfastjettools.so.0.0.0 libfastjettools.so.0 libfastjettools.so'
 
 # The name of the static archive.
 old_library=''
 
 # Linker flags that can not go in dependency_libs.
-inherited_linker_flags='  -pthread'
+inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' -lm'
+dependency_libs=' /afs/.cern.ch/sw/lcg/contrib/gcc/4.3.5/x86_64-slc5-gcc34-opt/lib/../lib64/libstdc++.la'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/Users/Alex/Desktop/ProofAna/utils/fastjet/install-dir/lib'
+libdir='/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir/lib'

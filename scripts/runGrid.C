@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iostream>
 
-void runGrid(TString outDS, TString extraFlags = "--nGBPerJob=10", bool noSubmit = false, int copies=1)
+void runGrid(TString outDS, TString extraFlags = "--nGBPerJob=10 --allowTaskDuplication", bool noSubmit = false, int copies=1)
 {
 	if(outDS.Length() > 131) outDS.Resize(131);
 

@@ -1,10 +1,10 @@
 # contrib-wide Makefile include file, generated automatically with
-# ./configure CXXFLAGS=-O2 -pipe -Wall -W -Woverloaded-virtual -pthread -stdlib=libc++ -std=c++11 -m64 -I/Users/Alex/Desktop/HEP/ROOT6/include -Qunused-arguments -DJETEDM_STANDALONE  LDFLAGS=-O2 -mmacosx-version-min=10.10 -m64 FC=gfortran FCFLAGS=-O2 -fPIC --fastjet-config=/Users/Alex/Desktop/ProofAna/utils/fastjet/fastjet-config --prefix=/Users/Alex/Desktop/ProofAna/utils/fastjet/install-dir
-CXXFLAGS=-O2 -pipe -Wall -W -Woverloaded-virtual -pthread -stdlib=libc++ -std=c++11 -m64 -I/Users/Alex/Desktop/HEP/ROOT6/include -Qunused-arguments -DJETEDM_STANDALONE 
-LDFLAGS=-O2 -mmacosx-version-min=10.10 -m64
+# ./configure CXXFLAGS=-O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE  LDFLAGS=-O2 -m64 FC=gfortran FCFLAGS=-O2 -fPIC --fastjet-config=/sx/caj24/testarea/ProofAna/utils/fastjet/fastjet-config --prefix=/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
+CXXFLAGS=-O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE 
+LDFLAGS=-O2 -m64
 FC=gfortran
 FCFLAGS=-O2 -fPIC
-FASTJETCONFIG=/Users/Alex/Desktop/ProofAna/utils/fastjet/fastjet-config
-PREFIX=/Users/Alex/Desktop/ProofAna/utils/fastjet/install-dir
+FASTJETCONFIG=/sx/caj24/testarea/ProofAna/utils/fastjet/fastjet-config
+PREFIX=/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
 install_script = $(SHELL) ../utils/install-sh
 check_script = ../utils/check.sh
