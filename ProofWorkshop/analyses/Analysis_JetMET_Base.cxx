@@ -1886,7 +1886,7 @@ MomKey Analysis_JetMET_Base::MakeSKJets(const fastjet::JetAlgorithm algo, const 
   const static MomKey SJetKey("jets");
   vector<fastjet::PseudoJet> fullEvent = ObjsToPJ(constType);
   
-  fullEvent = fastjet::SelectorAbsRapMax(rapMax)(fullEvent);
+  fullEvent = fastjet::SelectorRapRange(-1.0*rapMax,rapMax)(fullEvent);
 
   fastjet::JetDefinition jetDef(algo, jetR,fastjet::E_scheme, fastjet::Best);
   fastjet::ClusterSequence clust_seq_full(fullEvent, jetDef);
@@ -2011,7 +2011,7 @@ pair<double,double> Analysis_JetMET_Base::GetSKrho(const MomKey constType, const
   double rapMin = -5.0;
   switch (region) {
 	  case 0:
-        rapMax = 3.2;
+                rapMax = 3.2;
 		rapMin = -3.2;
 		break;
 	  case 1:
@@ -2032,7 +2032,7 @@ pair<double,double> Analysis_JetMET_Base::GetSKrho(const MomKey constType, const
 		break;
   }
   
-  fullEvent = fastjet::SelectorRapRange(rapMin,rapMax)(fullEvent);
+  fullEvent = fastjet::SelectorEtaRange(rapMin,rapMax)(fullEvent);
 
   fastjet::contrib::SoftKiller killer(rapMin, rapMax, grid_size, grid_size);
     
@@ -2096,7 +2096,8 @@ pair<double,double> Analysis_JetMET_Base::GetSKrho(const MomKey constType, const
   }// end loop over jets
   double rhoMean = ptSum/ourTowers.size();
   //Add(FFinalKey, rho);
-  
+  cout << "    pT Threshold from Mean: " << rhoMean << " in region " << region <<  endl;
+
   rho_pair = make_pair(rhoMean, pt_threshold);
   return rho_pair;
   //return FinalKey;

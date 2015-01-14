@@ -9,8 +9,8 @@
 
 # the list of plugins is dynamic so we need the following
 # line to deal with the static lib link
-installationdir=/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
-prefix=/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
+installationdir=/sx/caj24/testarea/ProofAna_git/utils/fastjet/install-dir
+prefix=/sx/caj24/testarea/ProofAna_git/utils/fastjet/install-dir
 exec_prefix=${prefix}
 
 # print a usage message and exit
@@ -298,7 +298,7 @@ case $found_query in
 	echo 3.0.2
 	;;
     prefix)
-	echo /sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
+	echo /sx/caj24/testarea/ProofAna_git/utils/fastjet/install-dir
 	;;
     cxxflags)
 	echo -I${prefix}/include 
@@ -346,8 +346,8 @@ case $found_query in
 	echo ""
 	echo "Configuration invocation was"
 	echo ""
-	echo "  ./configure  'CXXFLAGS=-O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE ' 'LDFLAGS=-O2 -m64' 'FC=gfortran' 'FCFLAGS=-O2 -fPIC' '--enable-shared' '--disable-static' '--enable-monolithic' '--prefix=/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir' '--enable-siscone=no' '--enable-cdfcones=no' '--enable-nesteddefs=no' '--enable-jade=no' '--enable-eecambridge=no' 'CFLAGS= -D__USE_XOPEN2K8' 'CPPFLAGS= -D__USE_XOPEN2K8'"
+	echo "  ./configure  'CXXFLAGS=-O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE ' 'LDFLAGS=-O2 -m64' 'FC=gfortran' 'FCFLAGS=-O2 -fPIC' '--enable-shared' '--disable-static' '--enable-monolithic' '--prefix=/sx/caj24/testarea/ProofAna_git/utils/fastjet/install-dir' '--enable-siscone=no' '--enable-cdfcones=no' '--enable-nesteddefs=no' '--enable-jade=no' '--enable-eecambridge=no' 'CFLAGS= -D__USE_XOPEN2K8' 'CPPFLAGS= -D__USE_XOPEN2K8'"
 	echo ""
-	printf "Configuration summary:\n----------------------\n  Installation directory     /sx/caj24/testarea/ProofAna/utils/fastjet/install-dir\n  Shared libraries           yes\n  Static libraries           no\n  Debug flag                 no\n  CGAL support               no\n  Plugins: EECambridge       no\n           Jade              no\n           NestedDefs        no\n           SISCone           no\n           CDFCones          no\n           D0RunICone        no\n           D0RunIICone       no\n           ATLASCone         no\n           CMSIterativeCone  no\n           PxCone            no\n           TrackJet          no\n           GridJet           yes\n           FlavKt            no\n  Monolithic plugins lib     yes\n"
+	printf "Configuration summary:\n----------------------\n  Installation directory     /sx/caj24/testarea/ProofAna_git/utils/fastjet/install-dir\n  Shared libraries           yes\n  Static libraries           no\n  Debug flag                 no\n  CGAL support               no\n  Plugins: EECambridge       no\n           Jade              no\n           NestedDefs        no\n           SISCone           no\n           CDFCones          no\n           D0RunICone        no\n           D0RunIICone       no\n           ATLASCone         no\n           CMSIterativeCone  no\n           PxCone            no\n           TrackJet          no\n           GridJet           yes\n           FlavKt            no\n  Monolithic plugins lib     yes\n"
 	;;
 esac

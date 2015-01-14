@@ -42,7 +42,7 @@ void runSimple(TString mode       = "local",                // local, lite, clus
     
     // Best to leave alone  
     TString pathLite("");
-    TString pathCluster("root://atlprf01.slac.stanford.edu:2094//atlas/output/");
+    TString pathCluster("root://bolt.physics.indiana.edu/");
     pathCluster.Append(username);
     pathCluster.Append("/");
 

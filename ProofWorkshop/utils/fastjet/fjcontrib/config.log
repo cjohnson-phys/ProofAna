@@ -1,8 +1,8 @@
-This file was created by the fastjet contrib configure on Mon Jan 12 16:05:57 EST 2015
+This file was created by the fastjet contrib configure on Wed Jan 14 16:09:24 EST 2015
 
 The command line invocation was
 
-    ./configure CXXFLAGS=-O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE  LDFLAGS=-O2 -m64 FC=gfortran FCFLAGS=-O2 -fPIC --fastjet-config=/sx/caj24/testarea/ProofAna/utils/fastjet/fastjet-config --prefix=/sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
+    ./configure CXXFLAGS=-O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE  LDFLAGS=-O2 -m64 FC=gfortran FCFLAGS=-O2 -fPIC --fastjet-config=/sx/caj24/testarea/ProofAna_git/utils/fastjet/fastjet-config --prefix=/sx/caj24/testarea/ProofAna_git/utils/fastjet/install-dir
 
         ConstituentSubtractor  v1.0.0
         EnergyCorrelator       v1.1.0
@@ -17,5 +17,5 @@ The command line invocation was
         SubjetCounting         v1.0.1
         VariableR              v1.1.1
 
-Installation prefix: /sx/caj24/testarea/ProofAna/utils/fastjet/install-dir
+Installation prefix: /sx/caj24/testarea/ProofAna_git/utils/fastjet/install-dir
 

@@ -9,9 +9,9 @@
 # root setup code
 #
 
-include /Users/Alex/Desktop/HEP/ROOT6/etc/Makefile.arch
+include /cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/etc/Makefile.arch
 
-CXXFLAGS   += -I.. -I$(ROOTCOREBIN)/include $(ROOTCORETEST_CXXFLAGS) -DROOTCORE $(shell root-config --cflags) 
+CXXFLAGS   += -I.. -I$(ROOTCOREBIN)/include $(ROOTCORETEST_CXXFLAGS) -DROOTCORE $(shell root-config --cflags) -O2 -Wall -fPIC -pthread -m64 -I/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase/x86_64/root/5.34.19-x86_64-slc5-gcc4.3/include -fno-builtin-memcmp -DJETEDM_STANDALONE 
 LDFLAGS    += $(ROOTCORETEST_LDFLAGS)
 SOFLAGS    += $(ROOTCORETEST_LDFLAGS) $(shell root-config --ldflags) 
 
